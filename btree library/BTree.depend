@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1787063998 source:/home/mint/Documents/DS/BTree/main.c
+	<stdio.h>
+	<stdlib.h>
+	"supermarket.h"
+
+1787064540 /home/mint/Documents/DS/BTree/supermarket.h
+	"btree.h"
+
+1787064540 /home/mint/Documents/DS/BTree/btree.h
+
+1787064540 source:/home/mint/Documents/DS/BTree/supermarket.c
+	<stdio.h>
+	<stdlib.h>
+	"supermarket.h"
+

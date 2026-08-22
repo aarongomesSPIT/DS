@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1786417912 source:/home/mint/Documents/DS/Binary Search Tree/binarySearchTree.c
+	<stdio.h>
+	<stdlib.h>
+	"binarySearchTree.h"
+	"library.h"
+
+1786419145 /home/mint/Documents/DS/Binary Search Tree/binarySearchTree.h
+
+1786419474 /home/mint/Documents/DS/Binary Search Tree/library.h
+	"binarySearchTree.h"
+
+1786418074 source:/home/mint/Documents/DS/Binary Search Tree/main.c
+	<stdio.h>
+	<stdlib.h>
+	"binarySearchTree.h"
+	"library.h"
+
+1786419417 source:/home/mint/Documents/DS/Binary Search Tree/library.c
+	"library.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

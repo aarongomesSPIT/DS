@@ -1,0 +1,12 @@
+#ifndef SUPERMARKET_H_INCLUDED
+#define SUPERMARKET_H_INCLUDED
+
+#include "btree.h"
+
+void ADD_BOOK();
+void SEARCH_BOOK();
+void UPDATE_STOCK();
+void GENERATE_BILL();
+void DISPLAY_ALL_BOOKS();
+
+#endif // SUPERMARKET_H_INCLUDED

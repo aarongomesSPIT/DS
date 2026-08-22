@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1785918225 source:/home/mint/Documents/DS/Linked List/SinglyLinkedList/food.c
+	"singlyLinkedList.h"
+	<stddef.h>
+	<string.h>
+	<stdio.h>
+
+1785918225 /home/mint/Documents/DS/Linked List/SinglyLinkedList/singlyLinkedList.h
+
+1785854251 source:/home/mint/Documents/DS/Linked List/SinglyLinkedList/main.c
+	<stdio.h>
+	<stdlib.h>
+	"food.h"
+	"singlyLinkedList.h"
+
+1785853313 /home/mint/Documents/DS/Linked List/SinglyLinkedList/food.h
+
+1785919375 source:/home/mint/Documents/DS/Linked List/SinglyLinkedList/singlyLinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<string.h>
+	"singlyLinkedList.h"
+

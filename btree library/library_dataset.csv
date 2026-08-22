@@ -1,0 +1,1001 @@
+ISBN,Title,Author,Stock
+10000,C Programming,Brian Kernighan,10
+10001,Art of Comp Prog,Donald Knuth,81
+10002,Intro to Algorithms,Thomas Cormen,69
+10003,Clean Code,Robert Martin,21
+10004,Design Patterns,Erich Gamma,62
+10005,Effective Java,Joshua Bloch,56
+10006,Pragmatic Programmer,Andrew Hunt,35
+10007,Building Microservices,Sam Newman,60
+10008,OS Concepts,Abraham Silberschatz,90
+10009,Learning Python,Mark Lutz,86
+10010,Head First Java,Kathy Sierra,27
+10011,Computer Networks,Andrew Tanenbaum,15
+10012,Database Concepts,Abraham Silberschatz,95
+10013,Domain Driven Design,Eric Evans,42
+10014,Mythical Man Month,Fred Brooks,61
+10015,Data Science,Joel Grus,13
+10016,Algorithms,Robert Sedgewick,49
+10017,Python Crash Course,Eric Matthes,75
+10018,Core Java,Cay Horstmann,20
+10019,Learning Node,Shelley Powers,79
+10020,Fluent Python,Luciano Ramalho,16
+10021,Rust Programming,Jim Blandy,11
+10022,Go Programming,Alan Donovan,57
+10023,Spring in Action,Craig Walls,33
+10024,Learning Go,Jon Bodner,95
+10025,Designing Data Apps,Martin Kleppmann,30
+10026,Effective C Plus,Scott Meyers,74
+10027,Eloquent JavaScript,Marijn Haverbeke,31
+10028,Clean Coder,Robert Martin,49
+10029,Refactoring,Martin Fowler,38
+10030,Clean Architecture,Robert Martin,75
+10031,Docker Up,Karl Matthias,85
+10032,Kubernetes Up,Brendan Burns,42
+10033,Code Complete,Steve McConnell,36
+10034,Site Reliability,Betsy Beyer,78
+10035,Cloud Native Java,Josh Long,79
+10036,Flask Web Dev,Miguel Grinberg,22
+10037,Deep Learning,Ian Goodfellow,32
+10038,Machine Learning,Aurelien Geron,64
+10039,Grokking Algorithms,Aditya Bhargava,9
+10040,Linux Command Line,William Shotts,66
+10041,Pro Git,Scott Chacon,71
+10042,UNIX Network Prog,Richard Stevens,9
+10043,Programming Pearls,Jon Bentley,99
+10044,Black Hat Python,Justin Seitz,22
+10045,Pattern Recognition,Christopher Bishop,22
+10046,Artificial Intelligence,Stuart Russell,47
+10047,The Prince,Niccolo Machiavelli,32
+10048,Pride and Prejudice,Jane Austen,70
+10049,Animal Farm,George Orwell,93
+10050,Great Gatsby,F Scott Fitzgerald,36
+10051,Harry Potter One,JK Rowling,48
+10052,Game of Thrones,George RR Martin,24
+10053,The Hobbit,JRR Tolkien,61
+10054,Atomic Habits,James Clear,95
+10055,Deep Work,Cal Newport,33
+10056,Computer Graphics,Donald Hearn,30
+10057,Compiler Design,Alfred Aho,56
+10058,Cryptography,Bruce Schneier,92
+10059,Network Security,William Stallings,5
+10060,Discrete Mathematics,Kenneth Rosen,89
+10061,Linear Algebra,Gilbert Strang,52
+10062,Calculus,James Stewart,77
+10063,Computer Vision,Richard Szeliski,93
+10064,Reinforcement Learning,Richard Sutton,14
+10065,Distributed Systems,Maarten van Steen,70
+10066,Software Engineering,Ian Sommerville,77
+10067,Data Mining,Jiawei Han,50
+10068,Cloud Computing,Rajkumar Buyya,31
+10069,Operating Systems,Thomas Anderson,99
+10070,C Programming Second Edition 1,Brian Kernighan,74
+10071,Art of Comp Prog Second Edition 1,Donald Knuth,93
+10072,Intro to Algorithms Second Edition 1,Thomas Cormen,27
+10073,Clean Code Second Edition 1,Robert Martin,24
+10074,Design Patterns Second Edition 1,Erich Gamma,9
+10075,Effective Java Second Edition 1,Joshua Bloch,10
+10076,Pragmatic Programmer Second Edition 1,Andrew Hunt,66
+10077,Building Microservices Second Edition 1,Sam Newman,5
+10078,OS Concepts Second Edition 1,Abraham Silberschatz,28
+10079,Learning Python Second Edition 1,Mark Lutz,69
+10080,Head First Java Second Edition 1,Kathy Sierra,0
+10081,Computer Networks Second Edition 1,Andrew Tanenbaum,65
+10082,Database Concepts Second Edition 1,Abraham Silberschatz,20
+10083,Domain Driven Design Second Edition 1,Eric Evans,91
+10084,Mythical Man Month Second Edition 1,Fred Brooks,45
+10085,Data Science Second Edition 1,Joel Grus,68
+10086,Algorithms Second Edition 1,Robert Sedgewick,74
+10087,Python Crash Course Second Edition 1,Eric Matthes,54
+10088,Core Java Second Edition 1,Cay Horstmann,66
+10089,Learning Node Second Edition 1,Shelley Powers,77
+10090,Fluent Python Second Edition 1,Luciano Ramalho,57
+10091,Rust Programming Second Edition 1,Jim Blandy,83
+10092,Go Programming Second Edition 1,Alan Donovan,58
+10093,Spring in Action Second Edition 1,Craig Walls,15
+10094,Learning Go Second Edition 1,Jon Bodner,73
+10095,Designing Data Apps Second Edition 1,Martin Kleppmann,87
+10096,Effective C Plus Second Edition 1,Scott Meyers,46
+10097,Eloquent JavaScript Second Edition 1,Marijn Haverbeke,69
+10098,Clean Coder Second Edition 1,Robert Martin,5
+10099,Refactoring Second Edition 1,Martin Fowler,3
+10100,Clean Architecture Second Edition 1,Robert Martin,95
+10101,Docker Up Second Edition 1,Karl Matthias,3
+10102,Kubernetes Up Second Edition 1,Brendan Burns,76
+10103,Code Complete Second Edition 1,Steve McConnell,90
+10104,Site Reliability Second Edition 1,Betsy Beyer,57
+10105,Cloud Native Java Second Edition 1,Josh Long,62
+10106,Flask Web Dev Second Edition 1,Miguel Grinberg,31
+10107,Deep Learning Second Edition 1,Ian Goodfellow,88
+10108,Machine Learning Second Edition 1,Aurelien Geron,80
+10109,Grokking Algorithms Second Edition 1,Aditya Bhargava,13
+10110,Linux Command Line Second Edition 1,William Shotts,43
+10111,Pro Git Second Edition 1,Scott Chacon,85
+10112,UNIX Network Prog Second Edition 1,Richard Stevens,57
+10113,Programming Pearls Second Edition 1,Jon Bentley,11
+10114,Black Hat Python Second Edition 1,Justin Seitz,82
+10115,Pattern Recognition Second Edition 1,Christopher Bishop,36
+10116,Artificial Intelligence Second Edition 1,Stuart Russell,96
+10117,The Prince Second Edition 1,Niccolo Machiavelli,68
+10118,Pride and Prejudice Second Edition 1,Jane Austen,52
+10119,Animal Farm Second Edition 1,George Orwell,55
+10120,Great Gatsby Second Edition 1,F Scott Fitzgerald,23
+10121,Harry Potter One Second Edition 1,JK Rowling,67
+10122,Game of Thrones Second Edition 1,George RR Martin,35
+10123,The Hobbit Second Edition 1,JRR Tolkien,48
+10124,Atomic Habits Second Edition 1,James Clear,80
+10125,Deep Work Second Edition 1,Cal Newport,27
+10126,Computer Graphics Second Edition 1,Donald Hearn,92
+10127,Compiler Design Second Edition 1,Alfred Aho,94
+10128,Cryptography Second Edition 1,Bruce Schneier,67
+10129,Network Security Second Edition 1,William Stallings,49
+10130,Discrete Mathematics Second Edition 1,Kenneth Rosen,12
+10131,Linear Algebra Second Edition 1,Gilbert Strang,27
+10132,Calculus Second Edition 1,James Stewart,27
+10133,Computer Vision Second Edition 1,Richard Szeliski,57
+10134,Reinforcement Learning Second Edition 1,Richard Sutton,23
+10135,Distributed Systems Second Edition 1,Maarten van Steen,42
+10136,Software Engineering Second Edition 1,Ian Sommerville,7
+10137,Data Mining Second Edition 1,Jiawei Han,46
+10138,Cloud Computing Second Edition 1,Rajkumar Buyya,71
+10139,Operating Systems Second Edition 1,Thomas Anderson,60
+10140,C Programming Third Edition 2,Brian Kernighan,98
+10141,Art of Comp Prog Third Edition 2,Donald Knuth,55
+10142,Intro to Algorithms Third Edition 2,Thomas Cormen,44
+10143,Clean Code Third Edition 2,Robert Martin,12
+10144,Design Patterns Third Edition 2,Erich Gamma,23
+10145,Effective Java Third Edition 2,Joshua Bloch,62
+10146,Pragmatic Programmer Third Edition 2,Andrew Hunt,52
+10147,Building Microservices Third Edition 2,Sam Newman,40
+10148,OS Concepts Third Edition 2,Abraham Silberschatz,46
+10149,Learning Python Third Edition 2,Mark Lutz,7
+10150,Head First Java Third Edition 2,Kathy Sierra,90
+10151,Computer Networks Third Edition 2,Andrew Tanenbaum,100
+10152,Database Concepts Third Edition 2,Abraham Silberschatz,70
+10153,Domain Driven Design Third Edition 2,Eric Evans,96
+10154,Mythical Man Month Third Edition 2,Fred Brooks,83
+10155,Data Science Third Edition 2,Joel Grus,55
+10156,Algorithms Third Edition 2,Robert Sedgewick,15
+10157,Python Crash Course Third Edition 2,Eric Matthes,79
+10158,Core Java Third Edition 2,Cay Horstmann,79
+10159,Learning Node Third Edition 2,Shelley Powers,53
+10160,Fluent Python Third Edition 2,Luciano Ramalho,63
+10161,Rust Programming Third Edition 2,Jim Blandy,60
+10162,Go Programming Third Edition 2,Alan Donovan,92
+10163,Spring in Action Third Edition 2,Craig Walls,71
+10164,Learning Go Third Edition 2,Jon Bodner,1
+10165,Designing Data Apps Third Edition 2,Martin Kleppmann,21
+10166,Effective C Plus Third Edition 2,Scott Meyers,79
+10167,Eloquent JavaScript Third Edition 2,Marijn Haverbeke,60
+10168,Clean Coder Third Edition 2,Robert Martin,2
+10169,Refactoring Third Edition 2,Martin Fowler,57
+10170,Clean Architecture Third Edition 2,Robert Martin,31
+10171,Docker Up Third Edition 2,Karl Matthias,75
+10172,Kubernetes Up Third Edition 2,Brendan Burns,52
+10173,Code Complete Third Edition 2,Steve McConnell,24
+10174,Site Reliability Third Edition 2,Betsy Beyer,17
+10175,Cloud Native Java Third Edition 2,Josh Long,9
+10176,Flask Web Dev Third Edition 2,Miguel Grinberg,30
+10177,Deep Learning Third Edition 2,Ian Goodfellow,60
+10178,Machine Learning Third Edition 2,Aurelien Geron,68
+10179,Grokking Algorithms Third Edition 2,Aditya Bhargava,70
+10180,Linux Command Line Third Edition 2,William Shotts,68
+10181,Pro Git Third Edition 2,Scott Chacon,51
+10182,UNIX Network Prog Third Edition 2,Richard Stevens,98
+10183,Programming Pearls Third Edition 2,Jon Bentley,79
+10184,Black Hat Python Third Edition 2,Justin Seitz,65
+10185,Pattern Recognition Third Edition 2,Christopher Bishop,0
+10186,Artificial Intelligence Third Edition 2,Stuart Russell,70
+10187,The Prince Third Edition 2,Niccolo Machiavelli,17
+10188,Pride and Prejudice Third Edition 2,Jane Austen,72
+10189,Animal Farm Third Edition 2,George Orwell,82
+10190,Great Gatsby Third Edition 2,F Scott Fitzgerald,47
+10191,Harry Potter One Third Edition 2,JK Rowling,7
+10192,Game of Thrones Third Edition 2,George RR Martin,3
+10193,The Hobbit Third Edition 2,JRR Tolkien,7
+10194,Atomic Habits Third Edition 2,James Clear,5
+10195,Deep Work Third Edition 2,Cal Newport,3
+10196,Computer Graphics Third Edition 2,Donald Hearn,31
+10197,Compiler Design Third Edition 2,Alfred Aho,3
+10198,Cryptography Third Edition 2,Bruce Schneier,29
+10199,Network Security Third Edition 2,William Stallings,80
+10200,Discrete Mathematics Third Edition 2,Kenneth Rosen,43
+10201,Linear Algebra Third Edition 2,Gilbert Strang,9
+10202,Calculus Third Edition 2,James Stewart,91
+10203,Computer Vision Third Edition 2,Richard Szeliski,27
+10204,Reinforcement Learning Third Edition 2,Richard Sutton,34
+10205,Distributed Systems Third Edition 2,Maarten van Steen,49
+10206,Software Engineering Third Edition 2,Ian Sommerville,50
+10207,Data Mining Third Edition 2,Jiawei Han,43
+10208,Cloud Computing Third Edition 2,Rajkumar Buyya,17
+10209,Operating Systems Third Edition 2,Thomas Anderson,32
+10210,C Programming Fourth Edition 3,Brian Kernighan,38
+10211,Art of Comp Prog Fourth Edition 3,Donald Knuth,62
+10212,Intro to Algorithms Fourth Edition 3,Thomas Cormen,54
+10213,Clean Code Fourth Edition 3,Robert Martin,45
+10214,Design Patterns Fourth Edition 3,Erich Gamma,25
+10215,Effective Java Fourth Edition 3,Joshua Bloch,44
+10216,Pragmatic Programmer Fourth Edition 3,Andrew Hunt,72
+10217,Building Microservices Fourth Edition 3,Sam Newman,89
+10218,OS Concepts Fourth Edition 3,Abraham Silberschatz,49
+10219,Learning Python Fourth Edition 3,Mark Lutz,58
+10220,Head First Java Fourth Edition 3,Kathy Sierra,27
+10221,Computer Networks Fourth Edition 3,Andrew Tanenbaum,81
+10222,Database Concepts Fourth Edition 3,Abraham Silberschatz,78
+10223,Domain Driven Design Fourth Edition 3,Eric Evans,56
+10224,Mythical Man Month Fourth Edition 3,Fred Brooks,31
+10225,Data Science Fourth Edition 3,Joel Grus,5
+10226,Algorithms Fourth Edition 3,Robert Sedgewick,88
+10227,Python Crash Course Fourth Edition 3,Eric Matthes,5
+10228,Core Java Fourth Edition 3,Cay Horstmann,63
+10229,Learning Node Fourth Edition 3,Shelley Powers,88
+10230,Fluent Python Fourth Edition 3,Luciano Ramalho,39
+10231,Rust Programming Fourth Edition 3,Jim Blandy,19
+10232,Go Programming Fourth Edition 3,Alan Donovan,60
+10233,Spring in Action Fourth Edition 3,Craig Walls,49
+10234,Learning Go Fourth Edition 3,Jon Bodner,12
+10235,Designing Data Apps Fourth Edition 3,Martin Kleppmann,71
+10236,Effective C Plus Fourth Edition 3,Scott Meyers,42
+10237,Eloquent JavaScript Fourth Edition 3,Marijn Haverbeke,97
+10238,Clean Coder Fourth Edition 3,Robert Martin,21
+10239,Refactoring Fourth Edition 3,Martin Fowler,73
+10240,Clean Architecture Fourth Edition 3,Robert Martin,84
+10241,Docker Up Fourth Edition 3,Karl Matthias,21
+10242,Kubernetes Up Fourth Edition 3,Brendan Burns,80
+10243,Code Complete Fourth Edition 3,Steve McConnell,2
+10244,Site Reliability Fourth Edition 3,Betsy Beyer,21
+10245,Cloud Native Java Fourth Edition 3,Josh Long,87
+10246,Flask Web Dev Fourth Edition 3,Miguel Grinberg,35
+10247,Deep Learning Fourth Edition 3,Ian Goodfellow,3
+10248,Machine Learning Fourth Edition 3,Aurelien Geron,34
+10249,Grokking Algorithms Fourth Edition 3,Aditya Bhargava,3
+10250,Linux Command Line Fourth Edition 3,William Shotts,89
+10251,Pro Git Fourth Edition 3,Scott Chacon,90
+10252,UNIX Network Prog Fourth Edition 3,Richard Stevens,77
+10253,Programming Pearls Fourth Edition 3,Jon Bentley,95
+10254,Black Hat Python Fourth Edition 3,Justin Seitz,3
+10255,Pattern Recognition Fourth Edition 3,Christopher Bishop,48
+10256,Artificial Intelligence Fourth Edition 3,Stuart Russell,2
+10257,The Prince Fourth Edition 3,Niccolo Machiavelli,4
+10258,Pride and Prejudice Fourth Edition 3,Jane Austen,73
+10259,Animal Farm Fourth Edition 3,George Orwell,74
+10260,Great Gatsby Fourth Edition 3,F Scott Fitzgerald,92
+10261,Harry Potter One Fourth Edition 3,JK Rowling,16
+10262,Game of Thrones Fourth Edition 3,George RR Martin,28
+10263,The Hobbit Fourth Edition 3,JRR Tolkien,30
+10264,Atomic Habits Fourth Edition 3,James Clear,88
+10265,Deep Work Fourth Edition 3,Cal Newport,28
+10266,Computer Graphics Fourth Edition 3,Donald Hearn,41
+10267,Compiler Design Fourth Edition 3,Alfred Aho,78
+10268,Cryptography Fourth Edition 3,Bruce Schneier,40
+10269,Network Security Fourth Edition 3,William Stallings,62
+10270,Discrete Mathematics Fourth Edition 3,Kenneth Rosen,21
+10271,Linear Algebra Fourth Edition 3,Gilbert Strang,29
+10272,Calculus Fourth Edition 3,James Stewart,46
+10273,Computer Vision Fourth Edition 3,Richard Szeliski,12
+10274,Reinforcement Learning Fourth Edition 3,Richard Sutton,81
+10275,Distributed Systems Fourth Edition 3,Maarten van Steen,7
+10276,Software Engineering Fourth Edition 3,Ian Sommerville,2
+10277,Data Mining Fourth Edition 3,Jiawei Han,65
+10278,Cloud Computing Fourth Edition 3,Rajkumar Buyya,4
+10279,Operating Systems Fourth Edition 3,Thomas Anderson,85
+10280,C Programming Handbook 4,Brian Kernighan,82
+10281,Art of Comp Prog Handbook 4,Donald Knuth,5
+10282,Intro to Algorithms Handbook 4,Thomas Cormen,60
+10283,Clean Code Handbook 4,Robert Martin,51
+10284,Design Patterns Handbook 4,Erich Gamma,60
+10285,Effective Java Handbook 4,Joshua Bloch,7
+10286,Pragmatic Programmer Handbook 4,Andrew Hunt,89
+10287,Building Microservices Handbook 4,Sam Newman,100
+10288,OS Concepts Handbook 4,Abraham Silberschatz,55
+10289,Learning Python Handbook 4,Mark Lutz,1
+10290,Head First Java Handbook 4,Kathy Sierra,77
+10291,Computer Networks Handbook 4,Andrew Tanenbaum,81
+10292,Database Concepts Handbook 4,Abraham Silberschatz,100
+10293,Domain Driven Design Handbook 4,Eric Evans,53
+10294,Mythical Man Month Handbook 4,Fred Brooks,79
+10295,Data Science Handbook 4,Joel Grus,1
+10296,Algorithms Handbook 4,Robert Sedgewick,20
+10297,Python Crash Course Handbook 4,Eric Matthes,64
+10298,Core Java Handbook 4,Cay Horstmann,87
+10299,Learning Node Handbook 4,Shelley Powers,14
+10300,Fluent Python Handbook 4,Luciano Ramalho,54
+10301,Rust Programming Handbook 4,Jim Blandy,92
+10302,Go Programming Handbook 4,Alan Donovan,14
+10303,Spring in Action Handbook 4,Craig Walls,75
+10304,Learning Go Handbook 4,Jon Bodner,58
+10305,Designing Data Apps Handbook 4,Martin Kleppmann,85
+10306,Effective C Plus Handbook 4,Scott Meyers,39
+10307,Eloquent JavaScript Handbook 4,Marijn Haverbeke,9
+10308,Clean Coder Handbook 4,Robert Martin,53
+10309,Refactoring Handbook 4,Martin Fowler,13
+10310,Clean Architecture Handbook 4,Robert Martin,38
+10311,Docker Up Handbook 4,Karl Matthias,26
+10312,Kubernetes Up Handbook 4,Brendan Burns,47
+10313,Code Complete Handbook 4,Steve McConnell,86
+10314,Site Reliability Handbook 4,Betsy Beyer,56
+10315,Cloud Native Java Handbook 4,Josh Long,46
+10316,Flask Web Dev Handbook 4,Miguel Grinberg,85
+10317,Deep Learning Handbook 4,Ian Goodfellow,100
+10318,Machine Learning Handbook 4,Aurelien Geron,31
+10319,Grokking Algorithms Handbook 4,Aditya Bhargava,18
+10320,Linux Command Line Handbook 4,William Shotts,52
+10321,Pro Git Handbook 4,Scott Chacon,11
+10322,UNIX Network Prog Handbook 4,Richard Stevens,44
+10323,Programming Pearls Handbook 4,Jon Bentley,26
+10324,Black Hat Python Handbook 4,Justin Seitz,39
+10325,Pattern Recognition Handbook 4,Christopher Bishop,71
+10326,Artificial Intelligence Handbook 4,Stuart Russell,45
+10327,The Prince Handbook 4,Niccolo Machiavelli,11
+10328,Pride and Prejudice Handbook 4,Jane Austen,96
+10329,Animal Farm Handbook 4,George Orwell,42
+10330,Great Gatsby Handbook 4,F Scott Fitzgerald,74
+10331,Harry Potter One Handbook 4,JK Rowling,75
+10332,Game of Thrones Handbook 4,George RR Martin,23
+10333,The Hobbit Handbook 4,JRR Tolkien,16
+10334,Atomic Habits Handbook 4,James Clear,57
+10335,Deep Work Handbook 4,Cal Newport,78
+10336,Computer Graphics Handbook 4,Donald Hearn,66
+10337,Compiler Design Handbook 4,Alfred Aho,57
+10338,Cryptography Handbook 4,Bruce Schneier,0
+10339,Network Security Handbook 4,William Stallings,45
+10340,Discrete Mathematics Handbook 4,Kenneth Rosen,29
+10341,Linear Algebra Handbook 4,Gilbert Strang,95
+10342,Calculus Handbook 4,James Stewart,52
+10343,Computer Vision Handbook 4,Richard Szeliski,30
+10344,Reinforcement Learning Handbook 4,Richard Sutton,66
+10345,Distributed Systems Handbook 4,Maarten van Steen,18
+10346,Software Engineering Handbook 4,Ian Sommerville,89
+10347,Data Mining Handbook 4,Jiawei Han,42
+10348,Cloud Computing Handbook 4,Rajkumar Buyya,20
+10349,Operating Systems Handbook 4,Thomas Anderson,9
+10350,C Programming Guide 5,Brian Kernighan,76
+10351,Art of Comp Prog Guide 5,Donald Knuth,45
+10352,Intro to Algorithms Guide 5,Thomas Cormen,100
+10353,Clean Code Guide 5,Robert Martin,44
+10354,Design Patterns Guide 5,Erich Gamma,6
+10355,Effective Java Guide 5,Joshua Bloch,37
+10356,Pragmatic Programmer Guide 5,Andrew Hunt,18
+10357,Building Microservices Guide 5,Sam Newman,12
+10358,OS Concepts Guide 5,Abraham Silberschatz,63
+10359,Learning Python Guide 5,Mark Lutz,92
+10360,Head First Java Guide 5,Kathy Sierra,62
+10361,Computer Networks Guide 5,Andrew Tanenbaum,65
+10362,Database Concepts Guide 5,Abraham Silberschatz,62
+10363,Domain Driven Design Guide 5,Eric Evans,57
+10364,Mythical Man Month Guide 5,Fred Brooks,36
+10365,Data Science Guide 5,Joel Grus,75
+10366,Algorithms Guide 5,Robert Sedgewick,70
+10367,Python Crash Course Guide 5,Eric Matthes,27
+10368,Core Java Guide 5,Cay Horstmann,16
+10369,Learning Node Guide 5,Shelley Powers,82
+10370,Fluent Python Guide 5,Luciano Ramalho,66
+10371,Rust Programming Guide 5,Jim Blandy,78
+10372,Go Programming Guide 5,Alan Donovan,83
+10373,Spring in Action Guide 5,Craig Walls,9
+10374,Learning Go Guide 5,Jon Bodner,57
+10375,Designing Data Apps Guide 5,Martin Kleppmann,81
+10376,Effective C Plus Guide 5,Scott Meyers,42
+10377,Eloquent JavaScript Guide 5,Marijn Haverbeke,32
+10378,Clean Coder Guide 5,Robert Martin,95
+10379,Refactoring Guide 5,Martin Fowler,33
+10380,Clean Architecture Guide 5,Robert Martin,57
+10381,Docker Up Guide 5,Karl Matthias,87
+10382,Kubernetes Up Guide 5,Brendan Burns,50
+10383,Code Complete Guide 5,Steve McConnell,11
+10384,Site Reliability Guide 5,Betsy Beyer,16
+10385,Cloud Native Java Guide 5,Josh Long,43
+10386,Flask Web Dev Guide 5,Miguel Grinberg,69
+10387,Deep Learning Guide 5,Ian Goodfellow,17
+10388,Machine Learning Guide 5,Aurelien Geron,81
+10389,Grokking Algorithms Guide 5,Aditya Bhargava,17
+10390,Linux Command Line Guide 5,William Shotts,90
+10391,Pro Git Guide 5,Scott Chacon,89
+10392,UNIX Network Prog Guide 5,Richard Stevens,14
+10393,Programming Pearls Guide 5,Jon Bentley,15
+10394,Black Hat Python Guide 5,Justin Seitz,72
+10395,Pattern Recognition Guide 5,Christopher Bishop,80
+10396,Artificial Intelligence Guide 5,Stuart Russell,46
+10397,The Prince Guide 5,Niccolo Machiavelli,15
+10398,Pride and Prejudice Guide 5,Jane Austen,90
+10399,Animal Farm Guide 5,George Orwell,70
+10400,Great Gatsby Guide 5,F Scott Fitzgerald,41
+10401,Harry Potter One Guide 5,JK Rowling,89
+10402,Game of Thrones Guide 5,George RR Martin,94
+10403,The Hobbit Guide 5,JRR Tolkien,87
+10404,Atomic Habits Guide 5,James Clear,23
+10405,Deep Work Guide 5,Cal Newport,49
+10406,Computer Graphics Guide 5,Donald Hearn,16
+10407,Compiler Design Guide 5,Alfred Aho,97
+10408,Cryptography Guide 5,Bruce Schneier,39
+10409,Network Security Guide 5,William Stallings,99
+10410,Discrete Mathematics Guide 5,Kenneth Rosen,39
+10411,Linear Algebra Guide 5,Gilbert Strang,98
+10412,Calculus Guide 5,James Stewart,33
+10413,Computer Vision Guide 5,Richard Szeliski,29
+10414,Reinforcement Learning Guide 5,Richard Sutton,49
+10415,Distributed Systems Guide 5,Maarten van Steen,88
+10416,Software Engineering Guide 5,Ian Sommerville,33
+10417,Data Mining Guide 5,Jiawei Han,41
+10418,Cloud Computing Guide 5,Rajkumar Buyya,11
+10419,Operating Systems Guide 5,Thomas Anderson,28
+10420,C Programming Essentials 6,Brian Kernighan,97
+10421,Art of Comp Prog Essentials 6,Donald Knuth,89
+10422,Intro to Algorithms Essentials 6,Thomas Cormen,40
+10423,Clean Code Essentials 6,Robert Martin,52
+10424,Design Patterns Essentials 6,Erich Gamma,92
+10425,Effective Java Essentials 6,Joshua Bloch,34
+10426,Pragmatic Programmer Essentials 6,Andrew Hunt,32
+10427,Building Microservices Essentials 6,Sam Newman,30
+10428,OS Concepts Essentials 6,Abraham Silberschatz,73
+10429,Learning Python Essentials 6,Mark Lutz,93
+10430,Head First Java Essentials 6,Kathy Sierra,28
+10431,Computer Networks Essentials 6,Andrew Tanenbaum,50
+10432,Database Concepts Essentials 6,Abraham Silberschatz,47
+10433,Domain Driven Design Essentials 6,Eric Evans,18
+10434,Mythical Man Month Essentials 6,Fred Brooks,47
+10435,Data Science Essentials 6,Joel Grus,8
+10436,Algorithms Essentials 6,Robert Sedgewick,99
+10437,Python Crash Course Essentials 6,Eric Matthes,42
+10438,Core Java Essentials 6,Cay Horstmann,47
+10439,Learning Node Essentials 6,Shelley Powers,23
+10440,Fluent Python Essentials 6,Luciano Ramalho,28
+10441,Rust Programming Essentials 6,Jim Blandy,34
+10442,Go Programming Essentials 6,Alan Donovan,76
+10443,Spring in Action Essentials 6,Craig Walls,42
+10444,Learning Go Essentials 6,Jon Bodner,87
+10445,Designing Data Apps Essentials 6,Martin Kleppmann,51
+10446,Effective C Plus Essentials 6,Scott Meyers,28
+10447,Eloquent JavaScript Essentials 6,Marijn Haverbeke,96
+10448,Clean Coder Essentials 6,Robert Martin,54
+10449,Refactoring Essentials 6,Martin Fowler,50
+10450,Clean Architecture Essentials 6,Robert Martin,96
+10451,Docker Up Essentials 6,Karl Matthias,7
+10452,Kubernetes Up Essentials 6,Brendan Burns,61
+10453,Code Complete Essentials 6,Steve McConnell,56
+10454,Site Reliability Essentials 6,Betsy Beyer,76
+10455,Cloud Native Java Essentials 6,Josh Long,10
+10456,Flask Web Dev Essentials 6,Miguel Grinberg,92
+10457,Deep Learning Essentials 6,Ian Goodfellow,13
+10458,Machine Learning Essentials 6,Aurelien Geron,5
+10459,Grokking Algorithms Essentials 6,Aditya Bhargava,54
+10460,Linux Command Line Essentials 6,William Shotts,33
+10461,Pro Git Essentials 6,Scott Chacon,76
+10462,UNIX Network Prog Essentials 6,Richard Stevens,18
+10463,Programming Pearls Essentials 6,Jon Bentley,74
+10464,Black Hat Python Essentials 6,Justin Seitz,76
+10465,Pattern Recognition Essentials 6,Christopher Bishop,75
+10466,Artificial Intelligence Essentials 6,Stuart Russell,25
+10467,The Prince Essentials 6,Niccolo Machiavelli,44
+10468,Pride and Prejudice Essentials 6,Jane Austen,38
+10469,Animal Farm Essentials 6,George Orwell,85
+10470,Great Gatsby Essentials 6,F Scott Fitzgerald,48
+10471,Harry Potter One Essentials 6,JK Rowling,100
+10472,Game of Thrones Essentials 6,George RR Martin,99
+10473,The Hobbit Essentials 6,JRR Tolkien,88
+10474,Atomic Habits Essentials 6,James Clear,41
+10475,Deep Work Essentials 6,Cal Newport,76
+10476,Computer Graphics Essentials 6,Donald Hearn,22
+10477,Compiler Design Essentials 6,Alfred Aho,25
+10478,Cryptography Essentials 6,Bruce Schneier,24
+10479,Network Security Essentials 6,William Stallings,91
+10480,Discrete Mathematics Essentials 6,Kenneth Rosen,87
+10481,Linear Algebra Essentials 6,Gilbert Strang,24
+10482,Calculus Essentials 6,James Stewart,20
+10483,Computer Vision Essentials 6,Richard Szeliski,82
+10484,Reinforcement Learning Essentials 6,Richard Sutton,72
+10485,Distributed Systems Essentials 6,Maarten van Steen,70
+10486,Software Engineering Essentials 6,Ian Sommerville,71
+10487,Data Mining Essentials 6,Jiawei Han,73
+10488,Cloud Computing Essentials 6,Rajkumar Buyya,79
+10489,Operating Systems Essentials 6,Thomas Anderson,39
+10490,C Programming Advanced 7,Brian Kernighan,14
+10491,Art of Comp Prog Advanced 7,Donald Knuth,52
+10492,Intro to Algorithms Advanced 7,Thomas Cormen,2
+10493,Clean Code Advanced 7,Robert Martin,58
+10494,Design Patterns Advanced 7,Erich Gamma,24
+10495,Effective Java Advanced 7,Joshua Bloch,13
+10496,Pragmatic Programmer Advanced 7,Andrew Hunt,47
+10497,Building Microservices Advanced 7,Sam Newman,27
+10498,OS Concepts Advanced 7,Abraham Silberschatz,0
+10499,Learning Python Advanced 7,Mark Lutz,14
+10500,Head First Java Advanced 7,Kathy Sierra,93
+10501,Computer Networks Advanced 7,Andrew Tanenbaum,18
+10502,Database Concepts Advanced 7,Abraham Silberschatz,36
+10503,Domain Driven Design Advanced 7,Eric Evans,37
+10504,Mythical Man Month Advanced 7,Fred Brooks,89
+10505,Data Science Advanced 7,Joel Grus,68
+10506,Algorithms Advanced 7,Robert Sedgewick,26
+10507,Python Crash Course Advanced 7,Eric Matthes,12
+10508,Core Java Advanced 7,Cay Horstmann,70
+10509,Learning Node Advanced 7,Shelley Powers,36
+10510,Fluent Python Advanced 7,Luciano Ramalho,35
+10511,Rust Programming Advanced 7,Jim Blandy,62
+10512,Go Programming Advanced 7,Alan Donovan,76
+10513,Spring in Action Advanced 7,Craig Walls,17
+10514,Learning Go Advanced 7,Jon Bodner,21
+10515,Designing Data Apps Advanced 7,Martin Kleppmann,37
+10516,Effective C Plus Advanced 7,Scott Meyers,56
+10517,Eloquent JavaScript Advanced 7,Marijn Haverbeke,15
+10518,Clean Coder Advanced 7,Robert Martin,18
+10519,Refactoring Advanced 7,Martin Fowler,93
+10520,Clean Architecture Advanced 7,Robert Martin,72
+10521,Docker Up Advanced 7,Karl Matthias,69
+10522,Kubernetes Up Advanced 7,Brendan Burns,97
+10523,Code Complete Advanced 7,Steve McConnell,25
+10524,Site Reliability Advanced 7,Betsy Beyer,25
+10525,Cloud Native Java Advanced 7,Josh Long,24
+10526,Flask Web Dev Advanced 7,Miguel Grinberg,94
+10527,Deep Learning Advanced 7,Ian Goodfellow,15
+10528,Machine Learning Advanced 7,Aurelien Geron,87
+10529,Grokking Algorithms Advanced 7,Aditya Bhargava,96
+10530,Linux Command Line Advanced 7,William Shotts,44
+10531,Pro Git Advanced 7,Scott Chacon,19
+10532,UNIX Network Prog Advanced 7,Richard Stevens,46
+10533,Programming Pearls Advanced 7,Jon Bentley,66
+10534,Black Hat Python Advanced 7,Justin Seitz,82
+10535,Pattern Recognition Advanced 7,Christopher Bishop,25
+10536,Artificial Intelligence Advanced 7,Stuart Russell,11
+10537,The Prince Advanced 7,Niccolo Machiavelli,36
+10538,Pride and Prejudice Advanced 7,Jane Austen,77
+10539,Animal Farm Advanced 7,George Orwell,79
+10540,Great Gatsby Advanced 7,F Scott Fitzgerald,81
+10541,Harry Potter One Advanced 7,JK Rowling,34
+10542,Game of Thrones Advanced 7,George RR Martin,5
+10543,The Hobbit Advanced 7,JRR Tolkien,66
+10544,Atomic Habits Advanced 7,James Clear,16
+10545,Deep Work Advanced 7,Cal Newport,68
+10546,Computer Graphics Advanced 7,Donald Hearn,54
+10547,Compiler Design Advanced 7,Alfred Aho,38
+10548,Cryptography Advanced 7,Bruce Schneier,1
+10549,Network Security Advanced 7,William Stallings,7
+10550,Discrete Mathematics Advanced 7,Kenneth Rosen,47
+10551,Linear Algebra Advanced 7,Gilbert Strang,26
+10552,Calculus Advanced 7,James Stewart,69
+10553,Computer Vision Advanced 7,Richard Szeliski,76
+10554,Reinforcement Learning Advanced 7,Richard Sutton,48
+10555,Distributed Systems Advanced 7,Maarten van Steen,8
+10556,Software Engineering Advanced 7,Ian Sommerville,25
+10557,Data Mining Advanced 7,Jiawei Han,86
+10558,Cloud Computing Advanced 7,Rajkumar Buyya,68
+10559,Operating Systems Advanced 7,Thomas Anderson,6
+10560,C Programming Fundamentals 8,Brian Kernighan,68
+10561,Art of Comp Prog Fundamentals 8,Donald Knuth,41
+10562,Intro to Algorithms Fundamentals 8,Thomas Cormen,85
+10563,Clean Code Fundamentals 8,Robert Martin,24
+10564,Design Patterns Fundamentals 8,Erich Gamma,60
+10565,Effective Java Fundamentals 8,Joshua Bloch,60
+10566,Pragmatic Programmer Fundamentals 8,Andrew Hunt,52
+10567,Building Microservices Fundamentals 8,Sam Newman,77
+10568,OS Concepts Fundamentals 8,Abraham Silberschatz,17
+10569,Learning Python Fundamentals 8,Mark Lutz,30
+10570,Head First Java Fundamentals 8,Kathy Sierra,6
+10571,Computer Networks Fundamentals 8,Andrew Tanenbaum,88
+10572,Database Concepts Fundamentals 8,Abraham Silberschatz,44
+10573,Domain Driven Design Fundamentals 8,Eric Evans,77
+10574,Mythical Man Month Fundamentals 8,Fred Brooks,18
+10575,Data Science Fundamentals 8,Joel Grus,51
+10576,Algorithms Fundamentals 8,Robert Sedgewick,64
+10577,Python Crash Course Fundamentals 8,Eric Matthes,84
+10578,Core Java Fundamentals 8,Cay Horstmann,25
+10579,Learning Node Fundamentals 8,Shelley Powers,65
+10580,Fluent Python Fundamentals 8,Luciano Ramalho,23
+10581,Rust Programming Fundamentals 8,Jim Blandy,54
+10582,Go Programming Fundamentals 8,Alan Donovan,100
+10583,Spring in Action Fundamentals 8,Craig Walls,80
+10584,Learning Go Fundamentals 8,Jon Bodner,67
+10585,Designing Data Apps Fundamentals 8,Martin Kleppmann,48
+10586,Effective C Plus Fundamentals 8,Scott Meyers,84
+10587,Eloquent JavaScript Fundamentals 8,Marijn Haverbeke,52
+10588,Clean Coder Fundamentals 8,Robert Martin,33
+10589,Refactoring Fundamentals 8,Martin Fowler,43
+10590,Clean Architecture Fundamentals 8,Robert Martin,42
+10591,Docker Up Fundamentals 8,Karl Matthias,20
+10592,Kubernetes Up Fundamentals 8,Brendan Burns,76
+10593,Code Complete Fundamentals 8,Steve McConnell,20
+10594,Site Reliability Fundamentals 8,Betsy Beyer,7
+10595,Cloud Native Java Fundamentals 8,Josh Long,95
+10596,Flask Web Dev Fundamentals 8,Miguel Grinberg,24
+10597,Deep Learning Fundamentals 8,Ian Goodfellow,21
+10598,Machine Learning Fundamentals 8,Aurelien Geron,18
+10599,Grokking Algorithms Fundamentals 8,Aditya Bhargava,48
+10600,Linux Command Line Fundamentals 8,William Shotts,51
+10601,Pro Git Fundamentals 8,Scott Chacon,14
+10602,UNIX Network Prog Fundamentals 8,Richard Stevens,62
+10603,Programming Pearls Fundamentals 8,Jon Bentley,7
+10604,Black Hat Python Fundamentals 8,Justin Seitz,65
+10605,Pattern Recognition Fundamentals 8,Christopher Bishop,81
+10606,Artificial Intelligence Fundamentals 8,Stuart Russell,75
+10607,The Prince Fundamentals 8,Niccolo Machiavelli,99
+10608,Pride and Prejudice Fundamentals 8,Jane Austen,3
+10609,Animal Farm Fundamentals 8,George Orwell,79
+10610,Great Gatsby Fundamentals 8,F Scott Fitzgerald,53
+10611,Harry Potter One Fundamentals 8,JK Rowling,100
+10612,Game of Thrones Fundamentals 8,George RR Martin,77
+10613,The Hobbit Fundamentals 8,JRR Tolkien,76
+10614,Atomic Habits Fundamentals 8,James Clear,10
+10615,Deep Work Fundamentals 8,Cal Newport,33
+10616,Computer Graphics Fundamentals 8,Donald Hearn,6
+10617,Compiler Design Fundamentals 8,Alfred Aho,85
+10618,Cryptography Fundamentals 8,Bruce Schneier,24
+10619,Network Security Fundamentals 8,William Stallings,36
+10620,Discrete Mathematics Fundamentals 8,Kenneth Rosen,89
+10621,Linear Algebra Fundamentals 8,Gilbert Strang,88
+10622,Calculus Fundamentals 8,James Stewart,39
+10623,Computer Vision Fundamentals 8,Richard Szeliski,61
+10624,Reinforcement Learning Fundamentals 8,Richard Sutton,86
+10625,Distributed Systems Fundamentals 8,Maarten van Steen,83
+10626,Software Engineering Fundamentals 8,Ian Sommerville,69
+10627,Data Mining Fundamentals 8,Jiawei Han,86
+10628,Cloud Computing Fundamentals 8,Rajkumar Buyya,63
+10629,Operating Systems Fundamentals 8,Thomas Anderson,3
+10630,C Programming Workbook 9,Brian Kernighan,9
+10631,Art of Comp Prog Workbook 9,Donald Knuth,13
+10632,Intro to Algorithms Workbook 9,Thomas Cormen,82
+10633,Clean Code Workbook 9,Robert Martin,56
+10634,Design Patterns Workbook 9,Erich Gamma,14
+10635,Effective Java Workbook 9,Joshua Bloch,29
+10636,Pragmatic Programmer Workbook 9,Andrew Hunt,25
+10637,Building Microservices Workbook 9,Sam Newman,52
+10638,OS Concepts Workbook 9,Abraham Silberschatz,7
+10639,Learning Python Workbook 9,Mark Lutz,92
+10640,Head First Java Workbook 9,Kathy Sierra,48
+10641,Computer Networks Workbook 9,Andrew Tanenbaum,11
+10642,Database Concepts Workbook 9,Abraham Silberschatz,97
+10643,Domain Driven Design Workbook 9,Eric Evans,35
+10644,Mythical Man Month Workbook 9,Fred Brooks,37
+10645,Data Science Workbook 9,Joel Grus,92
+10646,Algorithms Workbook 9,Robert Sedgewick,7
+10647,Python Crash Course Workbook 9,Eric Matthes,34
+10648,Core Java Workbook 9,Cay Horstmann,66
+10649,Learning Node Workbook 9,Shelley Powers,30
+10650,Fluent Python Workbook 9,Luciano Ramalho,18
+10651,Rust Programming Workbook 9,Jim Blandy,36
+10652,Go Programming Workbook 9,Alan Donovan,10
+10653,Spring in Action Workbook 9,Craig Walls,15
+10654,Learning Go Workbook 9,Jon Bodner,35
+10655,Designing Data Apps Workbook 9,Martin Kleppmann,99
+10656,Effective C Plus Workbook 9,Scott Meyers,77
+10657,Eloquent JavaScript Workbook 9,Marijn Haverbeke,79
+10658,Clean Coder Workbook 9,Robert Martin,51
+10659,Refactoring Workbook 9,Martin Fowler,33
+10660,Clean Architecture Workbook 9,Robert Martin,39
+10661,Docker Up Workbook 9,Karl Matthias,9
+10662,Kubernetes Up Workbook 9,Brendan Burns,34
+10663,Code Complete Workbook 9,Steve McConnell,24
+10664,Site Reliability Workbook 9,Betsy Beyer,42
+10665,Cloud Native Java Workbook 9,Josh Long,73
+10666,Flask Web Dev Workbook 9,Miguel Grinberg,29
+10667,Deep Learning Workbook 9,Ian Goodfellow,7
+10668,Machine Learning Workbook 9,Aurelien Geron,98
+10669,Grokking Algorithms Workbook 9,Aditya Bhargava,82
+10670,Linux Command Line Workbook 9,William Shotts,12
+10671,Pro Git Workbook 9,Scott Chacon,98
+10672,UNIX Network Prog Workbook 9,Richard Stevens,15
+10673,Programming Pearls Workbook 9,Jon Bentley,40
+10674,Black Hat Python Workbook 9,Justin Seitz,63
+10675,Pattern Recognition Workbook 9,Christopher Bishop,91
+10676,Artificial Intelligence Workbook 9,Stuart Russell,74
+10677,The Prince Workbook 9,Niccolo Machiavelli,21
+10678,Pride and Prejudice Workbook 9,Jane Austen,46
+10679,Animal Farm Workbook 9,George Orwell,84
+10680,Great Gatsby Workbook 9,F Scott Fitzgerald,86
+10681,Harry Potter One Workbook 9,JK Rowling,16
+10682,Game of Thrones Workbook 9,George RR Martin,16
+10683,The Hobbit Workbook 9,JRR Tolkien,51
+10684,Atomic Habits Workbook 9,James Clear,98
+10685,Deep Work Workbook 9,Cal Newport,94
+10686,Computer Graphics Workbook 9,Donald Hearn,78
+10687,Compiler Design Workbook 9,Alfred Aho,69
+10688,Cryptography Workbook 9,Bruce Schneier,21
+10689,Network Security Workbook 9,William Stallings,56
+10690,Discrete Mathematics Workbook 9,Kenneth Rosen,4
+10691,Linear Algebra Workbook 9,Gilbert Strang,4
+10692,Calculus Workbook 9,James Stewart,27
+10693,Computer Vision Workbook 9,Richard Szeliski,94
+10694,Reinforcement Learning Workbook 9,Richard Sutton,69
+10695,Distributed Systems Workbook 9,Maarten van Steen,45
+10696,Software Engineering Workbook 9,Ian Sommerville,92
+10697,Data Mining Workbook 9,Jiawei Han,7
+10698,Cloud Computing Workbook 9,Rajkumar Buyya,30
+10699,Operating Systems Workbook 9,Thomas Anderson,86
+10700,C Programming Reference 10,Brian Kernighan,38
+10701,Art of Comp Prog Reference 10,Donald Knuth,52
+10702,Intro to Algorithms Reference 10,Thomas Cormen,64
+10703,Clean Code Reference 10,Robert Martin,49
+10704,Design Patterns Reference 10,Erich Gamma,29
+10705,Effective Java Reference 10,Joshua Bloch,50
+10706,Pragmatic Programmer Reference 10,Andrew Hunt,89
+10707,Building Microservices Reference 10,Sam Newman,67
+10708,OS Concepts Reference 10,Abraham Silberschatz,6
+10709,Learning Python Reference 10,Mark Lutz,97
+10710,Head First Java Reference 10,Kathy Sierra,39
+10711,Computer Networks Reference 10,Andrew Tanenbaum,77
+10712,Database Concepts Reference 10,Abraham Silberschatz,45
+10713,Domain Driven Design Reference 10,Eric Evans,52
+10714,Mythical Man Month Reference 10,Fred Brooks,86
+10715,Data Science Reference 10,Joel Grus,24
+10716,Algorithms Reference 10,Robert Sedgewick,56
+10717,Python Crash Course Reference 10,Eric Matthes,23
+10718,Core Java Reference 10,Cay Horstmann,84
+10719,Learning Node Reference 10,Shelley Powers,67
+10720,Fluent Python Reference 10,Luciano Ramalho,99
+10721,Rust Programming Reference 10,Jim Blandy,0
+10722,Go Programming Reference 10,Alan Donovan,63
+10723,Spring in Action Reference 10,Craig Walls,7
+10724,Learning Go Reference 10,Jon Bodner,53
+10725,Designing Data Apps Reference 10,Martin Kleppmann,28
+10726,Effective C Plus Reference 10,Scott Meyers,9
+10727,Eloquent JavaScript Reference 10,Marijn Haverbeke,94
+10728,Clean Coder Reference 10,Robert Martin,56
+10729,Refactoring Reference 10,Martin Fowler,67
+10730,Clean Architecture Reference 10,Robert Martin,36
+10731,Docker Up Reference 10,Karl Matthias,49
+10732,Kubernetes Up Reference 10,Brendan Burns,15
+10733,Code Complete Reference 10,Steve McConnell,58
+10734,Site Reliability Reference 10,Betsy Beyer,58
+10735,Cloud Native Java Reference 10,Josh Long,38
+10736,Flask Web Dev Reference 10,Miguel Grinberg,65
+10737,Deep Learning Reference 10,Ian Goodfellow,32
+10738,Machine Learning Reference 10,Aurelien Geron,30
+10739,Grokking Algorithms Reference 10,Aditya Bhargava,44
+10740,Linux Command Line Reference 10,William Shotts,17
+10741,Pro Git Reference 10,Scott Chacon,95
+10742,UNIX Network Prog Reference 10,Richard Stevens,44
+10743,Programming Pearls Reference 10,Jon Bentley,79
+10744,Black Hat Python Reference 10,Justin Seitz,47
+10745,Pattern Recognition Reference 10,Christopher Bishop,28
+10746,Artificial Intelligence Reference 10,Stuart Russell,26
+10747,The Prince Reference 10,Niccolo Machiavelli,34
+10748,Pride and Prejudice Reference 10,Jane Austen,88
+10749,Animal Farm Reference 10,George Orwell,52
+10750,Great Gatsby Reference 10,F Scott Fitzgerald,77
+10751,Harry Potter One Reference 10,JK Rowling,50
+10752,Game of Thrones Reference 10,George RR Martin,27
+10753,The Hobbit Reference 10,JRR Tolkien,43
+10754,Atomic Habits Reference 10,James Clear,54
+10755,Deep Work Reference 10,Cal Newport,4
+10756,Computer Graphics Reference 10,Donald Hearn,50
+10757,Compiler Design Reference 10,Alfred Aho,54
+10758,Cryptography Reference 10,Bruce Schneier,91
+10759,Network Security Reference 10,William Stallings,83
+10760,Discrete Mathematics Reference 10,Kenneth Rosen,82
+10761,Linear Algebra Reference 10,Gilbert Strang,97
+10762,Calculus Reference 10,James Stewart,44
+10763,Computer Vision Reference 10,Richard Szeliski,77
+10764,Reinforcement Learning Reference 10,Richard Sutton,0
+10765,Distributed Systems Reference 10,Maarten van Steen,86
+10766,Software Engineering Reference 10,Ian Sommerville,66
+10767,Data Mining Reference 10,Jiawei Han,9
+10768,Cloud Computing Reference 10,Rajkumar Buyya,29
+10769,Operating Systems Reference 10,Thomas Anderson,63
+10770,C Programming Vol One 11,Brian Kernighan,48
+10771,Art of Comp Prog Vol One 11,Donald Knuth,47
+10772,Intro to Algorithms Vol One 11,Thomas Cormen,27
+10773,Clean Code Vol One 11,Robert Martin,30
+10774,Design Patterns Vol One 11,Erich Gamma,92
+10775,Effective Java Vol One 11,Joshua Bloch,8
+10776,Pragmatic Programmer Vol One 11,Andrew Hunt,81
+10777,Building Microservices Vol One 11,Sam Newman,44
+10778,OS Concepts Vol One 11,Abraham Silberschatz,46
+10779,Learning Python Vol One 11,Mark Lutz,69
+10780,Head First Java Vol One 11,Kathy Sierra,13
+10781,Computer Networks Vol One 11,Andrew Tanenbaum,58
+10782,Database Concepts Vol One 11,Abraham Silberschatz,48
+10783,Domain Driven Design Vol One 11,Eric Evans,6
+10784,Mythical Man Month Vol One 11,Fred Brooks,44
+10785,Data Science Vol One 11,Joel Grus,90
+10786,Algorithms Vol One 11,Robert Sedgewick,79
+10787,Python Crash Course Vol One 11,Eric Matthes,88
+10788,Core Java Vol One 11,Cay Horstmann,75
+10789,Learning Node Vol One 11,Shelley Powers,94
+10790,Fluent Python Vol One 11,Luciano Ramalho,66
+10791,Rust Programming Vol One 11,Jim Blandy,84
+10792,Go Programming Vol One 11,Alan Donovan,97
+10793,Spring in Action Vol One 11,Craig Walls,98
+10794,Learning Go Vol One 11,Jon Bodner,49
+10795,Designing Data Apps Vol One 11,Martin Kleppmann,69
+10796,Effective C Plus Vol One 11,Scott Meyers,46
+10797,Eloquent JavaScript Vol One 11,Marijn Haverbeke,24
+10798,Clean Coder Vol One 11,Robert Martin,39
+10799,Refactoring Vol One 11,Martin Fowler,99
+10800,Clean Architecture Vol One 11,Robert Martin,65
+10801,Docker Up Vol One 11,Karl Matthias,25
+10802,Kubernetes Up Vol One 11,Brendan Burns,25
+10803,Code Complete Vol One 11,Steve McConnell,73
+10804,Site Reliability Vol One 11,Betsy Beyer,23
+10805,Cloud Native Java Vol One 11,Josh Long,30
+10806,Flask Web Dev Vol One 11,Miguel Grinberg,6
+10807,Deep Learning Vol One 11,Ian Goodfellow,20
+10808,Machine Learning Vol One 11,Aurelien Geron,56
+10809,Grokking Algorithms Vol One 11,Aditya Bhargava,44
+10810,Linux Command Line Vol One 11,William Shotts,18
+10811,Pro Git Vol One 11,Scott Chacon,13
+10812,UNIX Network Prog Vol One 11,Richard Stevens,11
+10813,Programming Pearls Vol One 11,Jon Bentley,18
+10814,Black Hat Python Vol One 11,Justin Seitz,49
+10815,Pattern Recognition Vol One 11,Christopher Bishop,21
+10816,Artificial Intelligence Vol One 11,Stuart Russell,22
+10817,The Prince Vol One 11,Niccolo Machiavelli,37
+10818,Pride and Prejudice Vol One 11,Jane Austen,40
+10819,Animal Farm Vol One 11,George Orwell,45
+10820,Great Gatsby Vol One 11,F Scott Fitzgerald,13
+10821,Harry Potter One Vol One 11,JK Rowling,100
+10822,Game of Thrones Vol One 11,George RR Martin,77
+10823,The Hobbit Vol One 11,JRR Tolkien,77
+10824,Atomic Habits Vol One 11,James Clear,41
+10825,Deep Work Vol One 11,Cal Newport,84
+10826,Computer Graphics Vol One 11,Donald Hearn,90
+10827,Compiler Design Vol One 11,Alfred Aho,7
+10828,Cryptography Vol One 11,Bruce Schneier,77
+10829,Network Security Vol One 11,William Stallings,37
+10830,Discrete Mathematics Vol One 11,Kenneth Rosen,93
+10831,Linear Algebra Vol One 11,Gilbert Strang,44
+10832,Calculus Vol One 11,James Stewart,51
+10833,Computer Vision Vol One 11,Richard Szeliski,61
+10834,Reinforcement Learning Vol One 11,Richard Sutton,18
+10835,Distributed Systems Vol One 11,Maarten van Steen,29
+10836,Software Engineering Vol One 11,Ian Sommerville,59
+10837,Data Mining Vol One 11,Jiawei Han,23
+10838,Cloud Computing Vol One 11,Rajkumar Buyya,40
+10839,Operating Systems Vol One 11,Thomas Anderson,43
+10840,C Programming Vol Two 12,Brian Kernighan,5
+10841,Art of Comp Prog Vol Two 12,Donald Knuth,48
+10842,Intro to Algorithms Vol Two 12,Thomas Cormen,9
+10843,Clean Code Vol Two 12,Robert Martin,77
+10844,Design Patterns Vol Two 12,Erich Gamma,62
+10845,Effective Java Vol Two 12,Joshua Bloch,20
+10846,Pragmatic Programmer Vol Two 12,Andrew Hunt,71
+10847,Building Microservices Vol Two 12,Sam Newman,66
+10848,OS Concepts Vol Two 12,Abraham Silberschatz,66
+10849,Learning Python Vol Two 12,Mark Lutz,27
+10850,Head First Java Vol Two 12,Kathy Sierra,17
+10851,Computer Networks Vol Two 12,Andrew Tanenbaum,59
+10852,Database Concepts Vol Two 12,Abraham Silberschatz,37
+10853,Domain Driven Design Vol Two 12,Eric Evans,28
+10854,Mythical Man Month Vol Two 12,Fred Brooks,75
+10855,Data Science Vol Two 12,Joel Grus,22
+10856,Algorithms Vol Two 12,Robert Sedgewick,75
+10857,Python Crash Course Vol Two 12,Eric Matthes,38
+10858,Core Java Vol Two 12,Cay Horstmann,43
+10859,Learning Node Vol Two 12,Shelley Powers,82
+10860,Fluent Python Vol Two 12,Luciano Ramalho,100
+10861,Rust Programming Vol Two 12,Jim Blandy,12
+10862,Go Programming Vol Two 12,Alan Donovan,27
+10863,Spring in Action Vol Two 12,Craig Walls,48
+10864,Learning Go Vol Two 12,Jon Bodner,43
+10865,Designing Data Apps Vol Two 12,Martin Kleppmann,82
+10866,Effective C Plus Vol Two 12,Scott Meyers,53
+10867,Eloquent JavaScript Vol Two 12,Marijn Haverbeke,25
+10868,Clean Coder Vol Two 12,Robert Martin,91
+10869,Refactoring Vol Two 12,Martin Fowler,24
+10870,Clean Architecture Vol Two 12,Robert Martin,11
+10871,Docker Up Vol Two 12,Karl Matthias,90
+10872,Kubernetes Up Vol Two 12,Brendan Burns,9
+10873,Code Complete Vol Two 12,Steve McConnell,78
+10874,Site Reliability Vol Two 12,Betsy Beyer,63
+10875,Cloud Native Java Vol Two 12,Josh Long,78
+10876,Flask Web Dev Vol Two 12,Miguel Grinberg,83
+10877,Deep Learning Vol Two 12,Ian Goodfellow,6
+10878,Machine Learning Vol Two 12,Aurelien Geron,19
+10879,Grokking Algorithms Vol Two 12,Aditya Bhargava,47
+10880,Linux Command Line Vol Two 12,William Shotts,0
+10881,Pro Git Vol Two 12,Scott Chacon,32
+10882,UNIX Network Prog Vol Two 12,Richard Stevens,19
+10883,Programming Pearls Vol Two 12,Jon Bentley,70
+10884,Black Hat Python Vol Two 12,Justin Seitz,5
+10885,Pattern Recognition Vol Two 12,Christopher Bishop,87
+10886,Artificial Intelligence Vol Two 12,Stuart Russell,51
+10887,The Prince Vol Two 12,Niccolo Machiavelli,81
+10888,Pride and Prejudice Vol Two 12,Jane Austen,51
+10889,Animal Farm Vol Two 12,George Orwell,100
+10890,Great Gatsby Vol Two 12,F Scott Fitzgerald,76
+10891,Harry Potter One Vol Two 12,JK Rowling,66
+10892,Game of Thrones Vol Two 12,George RR Martin,40
+10893,The Hobbit Vol Two 12,JRR Tolkien,90
+10894,Atomic Habits Vol Two 12,James Clear,0
+10895,Deep Work Vol Two 12,Cal Newport,35
+10896,Computer Graphics Vol Two 12,Donald Hearn,27
+10897,Compiler Design Vol Two 12,Alfred Aho,46
+10898,Cryptography Vol Two 12,Bruce Schneier,93
+10899,Network Security Vol Two 12,William Stallings,32
+10900,Discrete Mathematics Vol Two 12,Kenneth Rosen,79
+10901,Linear Algebra Vol Two 12,Gilbert Strang,47
+10902,Calculus Vol Two 12,James Stewart,4
+10903,Computer Vision Vol Two 12,Richard Szeliski,67
+10904,Reinforcement Learning Vol Two 12,Richard Sutton,58
+10905,Distributed Systems Vol Two 12,Maarten van Steen,86
+10906,Software Engineering Vol Two 12,Ian Sommerville,96
+10907,Data Mining Vol Two 12,Jiawei Han,6
+10908,Cloud Computing Vol Two 12,Rajkumar Buyya,9
+10909,Operating Systems Vol Two 12,Thomas Anderson,11
+10910,C Programming Practice 13,Brian Kernighan,38
+10911,Art of Comp Prog Practice 13,Donald Knuth,71
+10912,Intro to Algorithms Practice 13,Thomas Cormen,31
+10913,Clean Code Practice 13,Robert Martin,53
+10914,Design Patterns Practice 13,Erich Gamma,2
+10915,Effective Java Practice 13,Joshua Bloch,34
+10916,Pragmatic Programmer Practice 13,Andrew Hunt,45
+10917,Building Microservices Practice 13,Sam Newman,19
+10918,OS Concepts Practice 13,Abraham Silberschatz,68
+10919,Learning Python Practice 13,Mark Lutz,74
+10920,Head First Java Practice 13,Kathy Sierra,66
+10921,Computer Networks Practice 13,Andrew Tanenbaum,17
+10922,Database Concepts Practice 13,Abraham Silberschatz,88
+10923,Domain Driven Design Practice 13,Eric Evans,88
+10924,Mythical Man Month Practice 13,Fred Brooks,83
+10925,Data Science Practice 13,Joel Grus,90
+10926,Algorithms Practice 13,Robert Sedgewick,27
+10927,Python Crash Course Practice 13,Eric Matthes,82
+10928,Core Java Practice 13,Cay Horstmann,11
+10929,Learning Node Practice 13,Shelley Powers,75
+10930,Fluent Python Practice 13,Luciano Ramalho,1
+10931,Rust Programming Practice 13,Jim Blandy,19
+10932,Go Programming Practice 13,Alan Donovan,81
+10933,Spring in Action Practice 13,Craig Walls,46
+10934,Learning Go Practice 13,Jon Bodner,26
+10935,Designing Data Apps Practice 13,Martin Kleppmann,25
+10936,Effective C Plus Practice 13,Scott Meyers,68
+10937,Eloquent JavaScript Practice 13,Marijn Haverbeke,51
+10938,Clean Coder Practice 13,Robert Martin,21
+10939,Refactoring Practice 13,Martin Fowler,48
+10940,Clean Architecture Practice 13,Robert Martin,11
+10941,Docker Up Practice 13,Karl Matthias,37
+10942,Kubernetes Up Practice 13,Brendan Burns,54
+10943,Code Complete Practice 13,Steve McConnell,4
+10944,Site Reliability Practice 13,Betsy Beyer,12
+10945,Cloud Native Java Practice 13,Josh Long,77
+10946,Flask Web Dev Practice 13,Miguel Grinberg,78
+10947,Deep Learning Practice 13,Ian Goodfellow,57
+10948,Machine Learning Practice 13,Aurelien Geron,84
+10949,Grokking Algorithms Practice 13,Aditya Bhargava,92
+10950,Linux Command Line Practice 13,William Shotts,69
+10951,Pro Git Practice 13,Scott Chacon,1
+10952,UNIX Network Prog Practice 13,Richard Stevens,28
+10953,Programming Pearls Practice 13,Jon Bentley,46
+10954,Black Hat Python Practice 13,Justin Seitz,49
+10955,Pattern Recognition Practice 13,Christopher Bishop,25
+10956,Artificial Intelligence Practice 13,Stuart Russell,64
+10957,The Prince Practice 13,Niccolo Machiavelli,83
+10958,Pride and Prejudice Practice 13,Jane Austen,22
+10959,Animal Farm Practice 13,George Orwell,74
+10960,Great Gatsby Practice 13,F Scott Fitzgerald,79
+10961,Harry Potter One Practice 13,JK Rowling,0
+10962,Game of Thrones Practice 13,George RR Martin,62
+10963,The Hobbit Practice 13,JRR Tolkien,88
+10964,Atomic Habits Practice 13,James Clear,49
+10965,Deep Work Practice 13,Cal Newport,75
+10966,Computer Graphics Practice 13,Donald Hearn,41
+10967,Compiler Design Practice 13,Alfred Aho,39
+10968,Cryptography Practice 13,Bruce Schneier,38
+10969,Network Security Practice 13,William Stallings,59
+10970,Discrete Mathematics Practice 13,Kenneth Rosen,37
+10971,Linear Algebra Practice 13,Gilbert Strang,3
+10972,Calculus Practice 13,James Stewart,90
+10973,Computer Vision Practice 13,Richard Szeliski,74
+10974,Reinforcement Learning Practice 13,Richard Sutton,74
+10975,Distributed Systems Practice 13,Maarten van Steen,45
+10976,Software Engineering Practice 13,Ian Sommerville,64
+10977,Data Mining Practice 13,Jiawei Han,31
+10978,Cloud Computing Practice 13,Rajkumar Buyya,87
+10979,Operating Systems Practice 13,Thomas Anderson,59
+10980,C Programming Examples 14,Brian Kernighan,86
+10981,Art of Comp Prog Examples 14,Donald Knuth,19
+10982,Intro to Algorithms Examples 14,Thomas Cormen,32
+10983,Clean Code Examples 14,Robert Martin,6
+10984,Design Patterns Examples 14,Erich Gamma,22
+10985,Effective Java Examples 14,Joshua Bloch,62
+10986,Pragmatic Programmer Examples 14,Andrew Hunt,72
+10987,Building Microservices Examples 14,Sam Newman,15
+10988,OS Concepts Examples 14,Abraham Silberschatz,86
+10989,Learning Python Examples 14,Mark Lutz,74
+10990,Head First Java Examples 14,Kathy Sierra,25
+10991,Computer Networks Examples 14,Andrew Tanenbaum,6
+10992,Database Concepts Examples 14,Abraham Silberschatz,96
+10993,Domain Driven Design Examples 14,Eric Evans,47
+10994,Mythical Man Month Examples 14,Fred Brooks,43
+10995,Data Science Examples 14,Joel Grus,31
+10996,Algorithms Examples 14,Robert Sedgewick,39
+10997,Python Crash Course Examples 14,Eric Matthes,24
+10998,Core Java Examples 14,Cay Horstmann,89
+10999,Learning Node Examples 14,Shelley Powers,38

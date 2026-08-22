@@ -1,0 +1,5 @@
+# Ignore obj folders at any depth
+**/obj/
+
+# Ignore bin folders as well (highly recommended for .NET)
+**/bin/

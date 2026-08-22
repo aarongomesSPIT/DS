@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1786260769 source:/home/mint/Documents/DS/Doubly Linked List/main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"journey.h"
+	"doublyLinkedList.h"
+
+1786260256 source:/home/mint/Documents/DS/Doubly Linked List/journey.c
+	"doublyLinkedList.h"
+	"journey.h"
+	<stddef.h>
+	<string.h>
+	<stdio.h>
+
+1786260256 /home/mint/Documents/DS/Doubly Linked List/doublyLinkedList.h
+
+1786259209 /home/mint/Documents/DS/Doubly Linked List/journey.h
+
+1786260557 source:/home/mint/Documents/DS/Doubly Linked List/doublyLinkedList.c
+	"doublyLinkedList.h"
+	"journey.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
