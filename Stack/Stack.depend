@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1785156930 source:/home/students/Desktop/Stack/stack.c
+	<stdlib.h>
+
+1785155540 source:/home/students/Desktop/Stack/main.c
+	<stdio.h>
+	<stdlib.h>
+	"stack.h"
+	<stdlib.h>
+	<time.h>
+
+1785154678 /home/students/Desktop/Stack/stack.h
+
+1785211620 source:/home/mint/Documents/Stack/main.c
+	<stdio.h>
+	<stdlib.h>
+	"stack.h"
+
+1785211216 /home/mint/Documents/Stack/stack.h
+
+1785211620 source:/home/mint/Documents/DS/Stack/main.c
+	<stdio.h>
+	<stdlib.h>
+	"stack.h"
+
+1785211216 /home/mint/Documents/DS/Stack/stack.h
+

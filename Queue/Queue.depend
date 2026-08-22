@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1785653370 source:/home/mint/Documents/DS/Queue/main.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+	<time.h>
+
+1785647191 /home/mint/Documents/DS/Queue/queue.h
+
+1785652804 source:/home/mint/Documents/DS/Queue/queue.c
+
