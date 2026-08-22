@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "library.h"
 
 int no_of_books = 0;
@@ -29,36 +27,73 @@ Book populateBook(int isbn, const char *title, const char *author, int stock) {
    return b;
 }
 
+void pushBook(int isbn, const char *title, const char *author, int stock) {
+    Book newBook = populateBook(isbn, title, author, stock);
+    if (no_of_books == 0)
+    {
+        root = createNode(1);
+    }
+    if (search(root, newBook) == NULL)
+    {
+        insert(&root, newBook);
+        no_of_books++;
+    }
+    else
+    {
+        printf("Book with ISBN %d already exists. Skipping.\n", isbn);
+    }
+}
+
 void ADD_BOOK()
 {
     printf("Enter the Book ISBN: ");
     int isbn;
     scanf("%d", &isbn);
+    printf("Enter the Book Title: ");
+    char title[50];
+    scanf(" %[^\n]", title);
+    printf("Enter the Book Author: ");
+    char author[50];
+    scanf(" %[^\n]", author);
     printf("Enter the stock quantity: ");
-    int quantity;
-    scanf("%d", &quantity);
+    int stock;
+    scanf("%d", &stock);
 
-    if (quantity < 0)
+    pushBook(isbn, title, author, stock);
+}
+
+void readCSV(const char *filename)
+{
+    FILE *fp;
+    char line[500];
+
+    int isbn, stock;
+    char title[200];
+    char author[200];
+    int no_of_books = 0;
+
+    fp = fopen(filename, "r");
+
+    if (fp == NULL)
     {
-        printf("Quantity cannot be negative.\n");
+        printf("Error opening file.\n");
         return;
     }
 
-    if (no_of_books == 0)
+    // Skip header
+    fgets(line, sizeof(line), fp);
+
+    while (fgets(line, sizeof(line), fp))
     {
-        root = createNode(1);
+        if (sscanf(line, "%d,%199[^,],%199[^,],%d",
+                   &isbn, title, author, &stock) == 4)
+        {
+            pushBook(isbn, title, author, stock);
+            no_of_books++;
+        }
     }
-
-    Book newbook = populateBook(isbn, title, author, stock);
-    if (search(root, key) != NULL)
-    {
-        printf("Book with ISBN %d already exists.\n", isbn);
-        return;
-    }
-
-    insert(&root, newbook);
-    no_of_books++;
-
+    printf("Finished reading CSV file. Total books added: %d\n", no_of_books);
+    fclose(fp);
 }
 
 void SEARCH_BOOK()
@@ -68,12 +103,12 @@ void SEARCH_BOOK()
     scanf("%d", &isbn);
     Book key;
     key.isbn = isbn;
-    key.quantity = 0; // Not used in search
-    BTreeNode* result = search(root, key);
-    if (result != NULL)
+    BTreeNode *resultNode = NULL;
+    int index = -1;
+    if (findKey(root, key, &resultNode, &index))
     {
         printf("Book with ISBN %d found.\n", isbn);
-        printBook(result->keys[0]);
+        printBook(resultNode->keys[index]);
     }
     else
     {
@@ -81,26 +116,55 @@ void SEARCH_BOOK()
     }
 }
 
-void UPDATE_STOCK()
+void BORROW_BOOK()
 {
-    printf("Enter the book ISBN to update: ");
+    printf("Enter the book ISBN to borrow: ");
     int isbn;
     scanf("%d", &isbn);
-    printf("Enter the new stock quantity: ");
-    int quantity;
-    scanf("%d", &quantity);
-
-    Book oldKey;
-    oldKey.isbn = isbn;
-    oldKey.stock = 0;
-
-    Book newKey;
-    newKey.isbn = isbn;
-    newKey.stock = quantity;
-
-    update(root, oldKey, newKey);
+    Book key;
+    key.isbn = isbn;
+    BTreeNode *resultNode = NULL;
+    int index = -1;
+    if (findKey(root, key, &resultNode, &index))
+    {
+        printf("Book with ISBN %d found.\n", isbn);
+        if (resultNode->keys[index].stock > 0)
+        {
+            resultNode->keys[index].stock--;
+            printf("Book borrowed successfully. Remaining stock: %d\n", resultNode->keys[index].stock);
+        }
+        else
+        {
+            printf("Book is out of stock.\n");
+        }
+        printBook(resultNode->keys[index]);
+    }
+    else
+    {
+        printf("Book with ISBN %d not found.\n", isbn);
+    }
 }
 
+void RETURN_BOOK()
+{
+    printf("Enter the book ISBN to return: ");
+    int isbn;
+    scanf("%d", &isbn);
+    Book key;
+    key.isbn = isbn;
+    BTreeNode *resultNode = NULL;
+    int index = -1;
+    if (findKey(root, key, &resultNode, &index))
+    {
+        printf("Book with ISBN %d found.\n", isbn);
+        resultNode->keys[index].stock++;
+        printBook(resultNode->keys[index]);
+    }
+    else
+    {
+        printf("Book with ISBN %d not found.\n", isbn);
+    }
+}
 
 
 void DISPLAY_ALL_BOOKS()

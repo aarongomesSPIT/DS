@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "supermarket.h"
+#include "library.h"
 
 void menu()
 {
     printf("1. Add book\n"
     "2. Search book\n"
-    "3. Generate Bill\n"
-    "4. Update Stock\n"
+    "3. Borrow Book\n"
+    "4. Return Book\n"
     "5. Display All books\n"
     "6. Exit\n");
 }
@@ -18,8 +18,8 @@ void menu()
 // ---------------------------------------------------------
 int main()
 {
-    printf("Welcome to the Supermarket Management System!\n");
-
+    printf("Welcome to the Library Management System!\n");
+    readCSV("library_dataset.csv");
     int choice = 0;
     while (choice != 6)
     {
@@ -29,16 +29,19 @@ int main()
         switch (choice)
         {
         case 1:
-            ADD_book();
+            ADD_BOOK();
             break;
         case 2:
-            SEARCH_book();
+            SEARCH_BOOK();
+            break;
+        case 3:
+            BORROW_BOOK();
             break;
         case 4:
-            UPDATE_STOCK();
+            RETURN_BOOK();
             break;
         case 5:
-            DISPLAY_ALL_bookS();
+            DISPLAY_ALL_BOOKS();
             break;
         case 6:
             printf("Exiting the program.\n");

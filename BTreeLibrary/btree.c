@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "btree.h"
 
 // ---------------------------------------------------------
@@ -60,7 +58,7 @@ void searchKey(BTreeNode *root, Book key)
     BTreeNode *result = search(root, key);
     if (result != NULL)
     {
-        printf("\nKey %d found in the B-Tree.\n", key.isbn);
+        printBook(key);
     }
     else
     {

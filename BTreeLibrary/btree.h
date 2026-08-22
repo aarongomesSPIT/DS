@@ -1,6 +1,9 @@
 #ifndef BTREE_H_INCLUDED
 #define BTREE_H_INCLUDED
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #define MAX_KEYS 3
 #define MIN_KEYS 1
 #define MAX_CHILDREN (MAX_KEYS + 1)
