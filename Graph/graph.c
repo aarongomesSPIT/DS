@@ -1,22 +1,54 @@
 #include <stdio.h>
-#include "queue.h"
-#define V 20
-#define MAXQ 100
+#include "graph.h"
 
-// Global variables
-int graph[V][V];
-int visited[V];
-int n;
-// Queue for BFS
-int queue[V];
-int front = -1;
-int rear = -1;
 // Function to enqueue an element
-
+int enqueue(int element)
+{
+    if (rear == MAXQ - 1)
+    {
+        printf("Queue overflow\n");
+        return -1;
+    }
+    else
+    {
+        if (front == -1)
+            front = 0;
+        rear++;
+        queue[rear] = element;
+        return 0;
+    }
+}
 // Function to dequeue an element
-
+int dequeue()
+{
+    if (front == -1)
+    {
+        printf("Queue underflow\n");
+        return -1;
+    }
+    else
+    {
+        int element = queue[front];
+        if (front == rear)
+        {
+            front = -1;
+            rear = -1;
+        }
+        else
+        {
+            front++;
+        }
+        return element;
+    }
+}
 // Function to check whether queue is empty
-
+int isEmpty()
+{
+    if (front == -1)
+        return 1;
+    else
+        return 0;
+}
 // Function to initialize adjacency matrix
 void initializeGraph()
 {
@@ -87,128 +119,4 @@ void bfs(int graph[V][V], int res[V], int *resSize) {
             }
         }
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Main function
-int main()
-{
-// Declare required variables
-    int edges;
-    int source, destination;
-    int start;
-    int choice;
-// Input number of vertices
-    statement;
-// Initialize graph
-    function_call;
-// Input number of edges
-    statement;
-// Read edges
-    for (initialization; condition; increment)
-    {
-// Input source and destination
-        statement;
-// Validate vertices
-        if (condition)
-        {
-// Add edge
-            function_call;
-        }
-        else
-        {
-// Display invalid input message
-            statement;
-        }
-    }
-// Menu loop
-    do
-    {
-// Display menu
-        statement;
-// Accept user's choice
-        statement;
-// Menu selection
-        switch (variable)
-        {
-        case 1:
-// Display adjacency matrix
-            function_call;
-            break;
-        case 2:
-// Accept starting vertex
-            statement;
-// Validate starting vertex
-            if (condition)
-            {
-// Reset visited array
-                for (initialization; condition; increment)
-                {
-                    statement;
-                }
-// Perform DFS
-                function_call;
-            }
-            else
-            {
-// Invalid vertex
-                statement;
-            }
-            break;
-        case 3:
-// Accept starting vertex
-            statement;
-// Validate starting vertex
-            if (condition)
-            {
-// Perform BFS
-                function_call;
-            }
-            else
-            {
-// Invalid vertex
-                statement;
-            }
-            break;
-        case 4:
-// Exit message
-            statement;
-            break;
-        default:
-// Invalid menu choice
-            statement;
-        }
-    }
-    while (condition);
-    return 0;
 }

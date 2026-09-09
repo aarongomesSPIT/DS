@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "graph.c"
+#include "graph.h"
 
 int main()
 {
-    printf("Hello world!\n");
+    printf("---- Smart Campus Navigation System ----!\n");
+
+    initializeGraph();
     return 0;
 }
