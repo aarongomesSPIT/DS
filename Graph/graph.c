@@ -56,8 +56,8 @@ void initializeGraph()
     {
         for (int j = 0; j < V; j++)
         {
-            graph[i][j] = 1;
-            graph[j][i] = 1;
+            graph[i][j] = 0;
+            graph[j][i] = 0;
         }
     }
 }
