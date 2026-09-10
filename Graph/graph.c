@@ -62,7 +62,7 @@ void initializeGraph()
     }
 }
 // Function to add an undirected edge
-void addEdge(int graph[V][V], int i, int j) {
+void addEdge(int i, int j) {
 
     // Since the graph is undirected
     graph[i][j] = 1;
@@ -70,7 +70,7 @@ void addEdge(int graph[V][V], int i, int j) {
 }
 
 // Function to display adjacency matrix
-void displayMatrix(int graph[V][V]) {
+void displayMatrix() {
     for (int i = 0; i < V; i++) {
         for (int j = 0; j < V; j++)
             printf("%d ", graph[i][j]); // Display matrix element
@@ -79,7 +79,7 @@ void displayMatrix(int graph[V][V]) {
 }
 
 // DFS function
-void dfsRec(int graph[V][V], int visited[V], int s, int res[V], int *idx) {
+void dfsRec(int visited[V], int s, int res[V], int *idx) {
     visited[s] = 1;
     res[(*idx)++] = s;
 
@@ -87,18 +87,18 @@ void dfsRec(int graph[V][V], int visited[V], int s, int res[V], int *idx) {
     // that are not visited yet
     for (int i = 0; i < V; i++) {
         if (graph[s][i] && visited[i] == 0)
-            dfsRec(graph, visited, i, res, idx);
+            dfsRec(visited, i, res, idx);
     }
 }
 
-void dfs(int graph[V][V], int res[V]) {
+void dfs(int res[V]) {
     int visited[V] = {0};
     int idx = 0;
-    dfsRec(graph, visited, 0, res, &idx);
+    dfsRec(visited, 0, res, &idx);
 }
 
 // BFS function
-void bfs(int graph[V][V], int res[V], int *resSize) {
+void bfs(int res[V], int *resSize) {
     int visited[V] = {0};
     int q[MAXQ];
     int front = 0, rear = 0;

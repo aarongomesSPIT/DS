@@ -27,6 +27,6 @@ int main()
     };
 
     initializeGraph();
-    
+    addEdge(1, 5);
     return 0;
 }
