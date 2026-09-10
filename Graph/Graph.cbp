@@ -24,18 +24,24 @@
 		</Compiler>
 		<Unit filename="graph.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="graph.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="queue.c">
+		<Unit filename="navigation.c">
 			<Option compilerVar="CC" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="queue.h">
+		<Unit filename="navigation.h">
 			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="queue.h" />
+		<Unit filename="temp.c">
+			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
 	</Project>
