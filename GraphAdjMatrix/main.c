@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "graph.h"
 #include "navigation.h"
 
 void printMenu(); 
@@ -46,9 +45,3 @@ void printMenu()
     printf("4. Find Shortest Path\n");
     printf("5. Exit\n");
 }
-
-
-● Source and destination locations for each road
-● Starting location for BFS traversal
-● Starting location for DFS traversa
-
