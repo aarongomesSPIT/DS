@@ -4,8 +4,6 @@
 
 void printMenu(); 
 
-
- 
 int main()
 {
     printf("---- Smart Campus Navigation System ----!\n");
