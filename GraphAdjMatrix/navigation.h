@@ -3,8 +3,8 @@
 #include "graph.h"
 #include <stdio.h>
     
-void startCampusMap();
-void startCustomMap();
+int startCampusMap();
+int startCustomMap();
 
 
 #endif // NAVIGATION_H_INCLUDED

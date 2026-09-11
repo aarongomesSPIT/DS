@@ -60,8 +60,9 @@ int isEmpty()
         return 0;
 }
 // Function to initialize adjacency matrix
-void initializeGraph()
+void initializeGraph(int vertices)
 {
+    n = vertices;
     for (int i = 0; i < V; i++)
     {
         for (int j = 0; j < V; j++)
@@ -71,18 +72,38 @@ void initializeGraph()
         }
     }
 }
+
+int getVertexCount()
+{
+    return n;
+}
+
+int isValidVertex(int vertex)
+{
+    return vertex >= 0 && vertex < n;
+}
+
 // Function to add an undirected edge
-void addEdge(int i, int j) {
+int addEdge(int i, int j) {
+    if (!isValidVertex(i) || !isValidVertex(j) || i == j)
+        return 0;
 
     // Since the graph is undirected
     graph[i][j] = 1;
     graph[j][i] = 1;
+    return 1;
 }
 
 // Function to display adjacency matrix
 void displayMatrix() {
-    for (int i = 0; i < V; i++) {
-        for (int j = 0; j < V; j++)
+    printf("\nAdjacency Matrix:\n    ");
+    for (int i = 0; i < n; i++)
+        printf("%3d", i);
+    printf("\n");
+
+    for (int i = 0; i < n; i++) {
+        printf("%3d ", i);
+        for (int j = 0; j < n; j++)
             printf("%d ", graph[i][j]); // Display matrix element
         printf("\n");
     }
@@ -95,26 +116,26 @@ void dfsRec(int visited[V], int s, int res[V], int *idx) {
 
     // Recursively visit all adjacent vertices
     // that are not visited yet
-    for (int i = 0; i < V; i++) {
+    for (int i = 0; i < n; i++) {
         if (graph[s][i] && visited[i] == 0)
             dfsRec(visited, i, res, idx);
     }
 }
 
-void dfs(int res[V]) {
+void dfs(int start, int res[V], int *resSize) {
     int visited[V] = {0};
     int idx = 0;
-    dfsRec(visited, 0, res, &idx);
+    dfsRec(visited, start, res, &idx);
+    *resSize = idx;
 }
 
 // BFS function
-void bfs(int res[V], int *resSize) {
+void bfs(int start, int res[V], int *resSize) {
     int visited[V] = {0};
     int q[MAXQ];
     int front = 0, rear = 0;
-    int src = 0;
-    visited[src] = 1;
-    q[rear++] = src;
+    visited[start] = 1;
+    q[rear++] = start;
 
     while (front < rear) {
         int curr = q[front++];

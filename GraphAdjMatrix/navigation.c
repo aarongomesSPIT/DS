@@ -22,7 +22,7 @@ const char *locations[] = {
         "A H Wadia Highschool"          // 17 - Labeled "A H WADIA HIGHSCHOOL" (top right)
     };
 
-void startCustomMap()
+int startCustomMap()
 {
     int numEdges;
     int numVertices;
@@ -30,20 +30,28 @@ void startCustomMap()
     scanf("%d", &numVertices);
     printf("Enter the number of roads (edges) in your custom map: ");
     scanf("%d", &numEdges);
-    initializeGraph();
+    if (numVertices < 1 || numVertices > V || numEdges < 0)
+    {
+        printf("Invalid number of locations or roads.\n");
+        return 0;
+    }
+
+    initializeGraph(numVertices);
     for (int i = 0; i < numEdges; i++)
     {
         int u, v;
         printf("Enter edge %d (format: u v): ", i + 1);
         scanf("%d %d", &u, &v);
-        addEdge(u, v);
+        if (!addEdge(u, v))
+            printf("Invalid edge. Vertices must be different and between 0 and %d.\n", numVertices - 1);
     }
+    return 1;
 }
 
 
-void startCampusMap()
+int startCampusMap()
 {
-    initializeGraph();
+    initializeGraph(18);
 
     // Main Gate (0) - marked as "YOU ARE HERE" near bottom center
     addEdge(0, 9);   // Main Gate -> SPJIMR Library Extension
@@ -132,4 +140,5 @@ void startCampusMap()
     addEdge(17, 3);  // High School -> Cultural Centre
     addEdge(17, 8);  // High School -> SPJIMR Hostel
 
+    return 1;
 }

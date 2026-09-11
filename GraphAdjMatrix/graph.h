@@ -8,12 +8,14 @@
 int enqueue(int element);
 int dequeue();
 int isEmpty();
-void initializeGraph();
-void addEdge(int i, int j);
+void initializeGraph(int vertices);
+int getVertexCount();
+int isValidVertex(int vertex);
+int addEdge(int i, int j);
 void displayMatrix();
 void dfsRec(int visited[V], int s, int res[V], int *idx);
-void dfs(int res[V]);
-void bfs(int res[V], int *resSize);
+void dfs(int start, int res[V], int *resSize);
+void bfs(int start, int res[V], int *resSize);
 
 
 #endif // GRAPH_H_INCLUDED
