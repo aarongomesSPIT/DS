@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include "graph.h"
 
+// Global variables
+int graph[V][V];
+int visited[V];
+int n;
+
+// Queue for BFS
+int queue[MAXQ];
+int front = -1;
+int rear = -1;
+
 // Function to enqueue an element
 int enqueue(int element)
 {

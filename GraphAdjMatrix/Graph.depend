@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1789109933 source:/home/mint/Documents/DS/GraphAdjMatrix/graph.c
+	<stdio.h>
+	"graph.h"
+
+1789109928 /home/mint/Documents/DS/GraphAdjMatrix/graph.h
+
+1789109761 source:/home/mint/Documents/DS/GraphAdjMatrix/main.c
+	<stdio.h>
+	<stdlib.h>
+	"navigation.h"
+
+1789109976 /home/mint/Documents/DS/GraphAdjMatrix/navigation.h
+	"graph.h"
+	<stdio.h>
+
+1789109981 source:/home/mint/Documents/DS/GraphAdjMatrix/navigation.c
+	"navigation.h"
+

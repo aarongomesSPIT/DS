@@ -31,18 +31,8 @@
 		</Unit>
 		<Unit filename="navigation.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="navigation.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="queue.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="queue.h" />
-		<Unit filename="temp.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="navigation.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

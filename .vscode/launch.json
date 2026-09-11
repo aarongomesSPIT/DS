@@ -33,8 +33,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/mint/Documents/DS/Graph",
-      "program": "/home/mint/Documents/DS/Graph/build/Release/outRelease",
+      "cwd": "/home/mint/Documents/DS/GraphList",
+      "program": "/home/mint/Documents/DS/GraphList/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

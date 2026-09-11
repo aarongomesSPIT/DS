@@ -1,5 +1,6 @@
 #include "navigation.h"
 
+
 const char *locations[] = {
         "Main Gate (YOU ARE HERE)",     // 0  - Marked at the bottom entrance
         "Library",                      // 1  - Labeled "LIBRARY" on map
