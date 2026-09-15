@@ -31,6 +31,7 @@ Graph* createGraph(int vertices) {
 
     graph->vertices = vertices;
 
+    // Create an array of adjacency lists. Size of array will be equal to number of vertices
     graph->adjList =
         (Node**)malloc(vertices * sizeof(Node*));
 
