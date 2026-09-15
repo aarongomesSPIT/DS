@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "GraphAdjList.h"
+
+// Node of Adjacency List
+typedef struct Node {
+    int vertex;
+    struct Node *next;
+} Node;
+
+// Graph structure
+typedef struct Graph {
+    int vertices;
+    struct Node **adjList;
+} Graph;
+
 
 // Create a new node
 Node* createNode(int vertex) {
