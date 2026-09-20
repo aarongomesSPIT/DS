@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1789714782 source:/home/students/Desktop/ds lab/DisjointSetSocial/disjointset.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1789716292 source:/home/students/Desktop/ds lab/DisjointSetSocial/main.c
+	<stdio.h>
+	<stdlib.h>
+	"disjointset.c"
+
+1789714782 /home/students/Desktop/ds lab/DisjointSetSocial/disjointset.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1789716298 source:/home/students/Desktop/ds lab/DisjointSetSocial/social.c
+
