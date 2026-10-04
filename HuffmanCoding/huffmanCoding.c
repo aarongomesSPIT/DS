@@ -15,7 +15,7 @@ struct MinHeapNode
     char data;
 
     // Frequency of the character
-    unsigned freq;
+    int freq;
 
     // Left and right child of this node
     struct MinHeapNode *left, *right;
@@ -38,7 +38,7 @@ struct MinHeap
 // A utility function allocate a new
 // min heap node with given character
 // and frequency of the character
-struct MinHeapNode* newNode(char data, unsigned freq)
+struct MinHeapNode* newNode(char data, int freq)
 {
     struct MinHeapNode* temp = (struct MinHeapNode*)malloc(
                                    sizeof(struct MinHeapNode));
@@ -243,8 +243,8 @@ struct MinHeapNode* buildHuffmanTree(char data[],
 
 // Prints huffman codes from the root of Huffman Tree.
 // It uses arr[] to store codes
-void printCodes(struct MinHeapNode* root, int arr[],
-                int top)
+void printCodes(struct MinHeapNode* root, int arr[], int top,
+                int* originalBits, int* compressedBits)
 
 {
 
@@ -253,7 +253,8 @@ void printCodes(struct MinHeapNode* root, int arr[],
     {
 
         arr[top] = 0;
-        printCodes(root->left, arr, top + 1);
+        printCodes(root->left, arr, top + 1, originalBits,
+               compressedBits);
     }
 
     // Assign 1 to right edge and recur
@@ -261,7 +262,8 @@ void printCodes(struct MinHeapNode* root, int arr[],
     {
 
         arr[top] = 1;
-        printCodes(root->right, arr, top + 1);
+        printCodes(root->right, arr, top + 1, originalBits,
+               compressedBits);
     }
 
     // If this is a leaf node, then
@@ -271,8 +273,18 @@ void printCodes(struct MinHeapNode* root, int arr[],
     if (isLeaf(root))
     {
 
-        printf("%c: ", root->data);
-        printArr(arr, top);
+        int codeLength = top == 0 ? 1 : top;
+        printf("\n%c\t\t%d\t\t", root->data, root->freq);
+        if (top == 0)
+            printf("0");
+        else
+            for (int i = 0; i < top; ++i)
+                printf("%d", arr[i]);
+
+         printf("\t\t%d\t\t%d", root->freq * 8,
+             root->freq * codeLength);
+        *originalBits += root->freq * 8;
+         *compressedBits += root->freq * codeLength;
     }
 }
 
@@ -290,19 +302,7 @@ void HuffmanCodes(char data[], int freq[], int size)
     // the Huffman tree built above
     int arr[MAX_TREE_HT], top = 0;
 
-    printCodes(root, arr, top);
-}
-
-// Driver code
-int main()
-{
-
-    char arr[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
-    int freq[] = { 5, 9, 12, 13, 16, 45 };
-
-    int size = sizeof(arr) / sizeof(arr[0]);
-
-    HuffmanCodes(arr, freq, size);
-
-    return 0;
+    int originalBits = 0;
+    int compressedBits = 0;
+    printCodes(root, arr, top, &originalBits, &compressedBits);
 }
