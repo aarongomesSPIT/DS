@@ -9,3 +9,5 @@
 # User-specific files
 *.rsuser
 **/*.o
+
+**/*.code-workspace
