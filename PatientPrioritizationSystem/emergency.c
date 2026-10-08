@@ -10,11 +10,6 @@ typedef struct {
     int severity;
 } Patient;
 
-void registerPatient(int heap[], int *heapSize);
-void treatHighestPriority(int heap[], int *heapSize);
-void displayHighestPriority(int heap[], int heapSize);
-void displayQueue(int heap[], int heapSize);
-
 static Patient patientMap[MAX_PATIENTS];
 static int mapCount = 0;
 
