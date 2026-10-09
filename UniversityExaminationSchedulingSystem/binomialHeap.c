@@ -546,7 +546,6 @@ void swapTransactionData(
     BinomialNode *b)
 {
     int tempInt;
-    double tempAmount;
     char tempType[30];
     /* Swap Transaction ID */
     tempInt = a->ExaminationID;
@@ -761,7 +760,7 @@ void displayTree(
         printf(" ");
     }
     printf(
-        "TID=%d | CID=%d | Type=%s | Amount=%.2f | Key=%d | Degree=%d\n",
+        "Exam ID=%d | Course Code=%d | Department=%s | Date=%s | Key=%d | Degree=%d\n",
         root->ExaminationID,
         root->CourseCode,
         root->Department,
@@ -802,7 +801,7 @@ void displayHeap(BinomialHeap *H)
             "\nBinomial Tree B%d\n",
             current->degree);
         printf(
-            "Root: TID=%d | Key=%d\n",
+            "Root: Exam ID=%d | Key=%d\n",
             current->ExaminationID,
             current->key);
         displayTree(current->child, 1);
@@ -823,7 +822,7 @@ void displayRootList(BinomialHeap *H)
     while (current != NULL)
     {
         printf(
-            "[TID=%d Key=%d Degree=%d]",
+            "[Exam ID=%d Key=%d Degree=%d]",
             current->ExaminationID,
             current->key,
             current->degree);
