@@ -598,6 +598,7 @@ int decreaseKey(
     int newKey)
 {
     BinomialNode *parent;
+    (void)H;
     if (x == NULL)
     {
         printf("Invalid node.\n");

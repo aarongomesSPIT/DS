@@ -97,7 +97,7 @@ int main(void)
         case 4:
             queue = chooseQueue(&dept1, &dept2, &central, merged);
             if (queue == NULL) break;
-            exam = EXTRACT_MIN(queue);
+            exam = extractMin(queue);
             if (exam == NULL) {
                 printf("Heap is empty.\n");
             } else {

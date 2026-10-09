@@ -82,7 +82,7 @@ BinomialNode *DELETE_EXAM(BinomialHeap *H, int id)
         swapExamData(node, parent);
         node = parent;
     }
-    return removeRoot(H, node);
+    return extractMin(H);
 }
 
 double MEASURE_MERGE_TIME(int n)
