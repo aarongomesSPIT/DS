@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 /* =========================================================
 DISJOINT SET DATA STRUCTURE
@@ -17,6 +16,7 @@ INITIALIZE / MAKE-SET
 void makeSet(int n)
 {
     int i;
+    N = n;
     parent = (int *)malloc((n + 1) * sizeof(int));
     size = (int *)malloc((n + 1) * sizeof(int));
     for (i = 1; i <= n; i++)
