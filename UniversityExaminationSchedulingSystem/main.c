@@ -1,40 +1,10 @@
 #include "exam.c"
 
-int idExists(BinomialHeap *a, BinomialHeap *b, BinomialHeap *central,
-             int merged, int id)
-{
-    if (searchHeap(merged ? central : a, id) != NULL) return 1;
-    if (!merged && searchHeap(b, id) != NULL) return 1;
-    return 0;
-}
-
-BinomialHeap *findHeap(BinomialHeap *a, BinomialHeap *b,
-                       BinomialHeap *central, int merged, int id)
-{
-    if (merged) return searchHeap(central, id) ? central : NULL;
-    if (searchHeap(a, id) != NULL) return a;
-    if (searchHeap(b, id) != NULL) return b;
-    return NULL;
-}
-
-BinomialHeap *chooseQueue(BinomialHeap *a, BinomialHeap *b,
-                          BinomialHeap *central, int merged)
-{
-    int choice;
-    if (merged) return central;
-
-    printf("Select queue (1 or 2): ");
-    if (scanf("%d", &choice) != 1) return NULL;
-    if (choice == 1) return a;
-    if (choice == 2) return b;
-    printf("Invalid queue.\n");
-    return NULL;
-}
-
 int main(void)
 {
     BinomialHeap dept1, dept2, central;
-    int merged = 0, choice, id, courseCode, priority, newPriority, size, i;
+    int merged = 0;
+    int choice, id, courseCode, priority, newPriority;
     int sizes[3];
     char department[50], date[11];
     BinomialHeap *queue, *foundHeap;
@@ -45,17 +15,7 @@ int main(void)
     initializeHeap(&central);
 
     do {
-        printf("\n=== University Examination Scheduling ===\n");
-        printf("1. Insert examination\n");
-        printf("2. Display all examinations\n");
-        printf("3. Merge departmental heaps\n");
-        printf("4. Extract minimum priority\n");
-        printf("5. Decrease priority\n");
-        printf("6. Delete examination\n");
-        printf("7. Measure merge time\n");
-        printf("8. Show complexity\n");
-        printf("0. Exit\n");
-        printf("Choice: ");
+        displayMenu();
         if (scanf("%d", &choice) != 1) {
             printf("Invalid input. Exiting.\n");
             break;
@@ -66,7 +26,7 @@ int main(void)
             queue = chooseQueue(&dept1, &dept2, &central, merged);
             if (queue == NULL) break;
             printf("Examination ID: "); scanf("%d", &id);
-            if (idExists(&dept1, &dept2, &central, merged, id)) {
+            if (findHeap(&dept1, &dept2, &central, merged, id) != NULL) {
                 printf("Examination ID already exists.\n");
                 break;
             }
@@ -101,9 +61,7 @@ int main(void)
             if (exam == NULL) {
                 printf("Heap is empty.\n");
             } else {
-                printf("Scheduled examination: ID=%d, Course=%d, Department=%s, Date=%s, Priority=%d\n",
-                       exam->ExaminationID, exam->CourseCode, exam->Department,
-                       exam->ExaminationDate, exam->key);
+                printExam("Scheduled examination", exam);
                 free(exam);
             }
             break;
@@ -144,13 +102,13 @@ int main(void)
                 printf("Invalid input.\n");
                 break;
             }
-            for (i = 0; i < 3; i++) {
-                size = sizes[i];
-                if (size < 1 || size > 100000) {
-                    printf("Size %d is invalid; enter a value from 1 to 100000.\n", size);
+            for (int i = 0; i < 3; i++) {
+                if (sizes[i] < 1 || sizes[i] > 100000) {
+                    printf("Size %d is invalid; enter a value from 1 to 100000.\n",
+                           sizes[i]);
                 } else {
                     printf("Merge two heaps of %d nodes each: %.8f seconds\n",
-                           size, MEASURE_MERGE_TIME(size));
+                           sizes[i], MEASURE_MERGE_TIME(sizes[i]));
                 }
             }
             break;

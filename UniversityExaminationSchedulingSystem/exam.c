@@ -1,6 +1,52 @@
 #include "binomialHeap.c"
 #include <time.h>
 
+BinomialHeap *findHeap(BinomialHeap *a, BinomialHeap *b,
+                       BinomialHeap *central, int merged, int id)
+{
+    if (merged) return searchHeap(central, id) ? central : NULL;
+    if (searchHeap(a, id) != NULL) return a;
+    if (searchHeap(b, id) != NULL) return b;
+    return NULL;
+}
+
+void displayMenu(void)
+{
+    printf("\n=== University Examination Scheduling ===\n");
+    printf("1. Insert examination\n");
+    printf("2. Display all examinations\n");
+    printf("3. Merge departmental heaps\n");
+    printf("4. Extract minimum priority\n");
+    printf("5. Decrease priority\n");
+    printf("6. Delete examination\n");
+    printf("7. Measure merge time\n");
+    printf("8. Show complexity\n");
+    printf("0. Exit\n");
+    printf("Choice: ");
+}
+
+BinomialHeap *chooseQueue(BinomialHeap *a, BinomialHeap *b,
+                          BinomialHeap *central, int merged)
+{
+    int choice;
+
+    if (merged) return central;
+
+    printf("Select queue (1 or 2): ");
+    if (scanf("%d", &choice) != 1) return NULL;
+    if (choice == 1) return a;
+    if (choice == 2) return b;
+    printf("Invalid queue.\n");
+    return NULL;
+}
+
+void printExam(const char *message, BinomialNode *exam)
+{
+    printf("%s: ID=%d, Course=%d, Department=%s, Date=%s, Priority=%d\n",
+           message, exam->ExaminationID, exam->CourseCode,
+           exam->Department, exam->ExaminationDate, exam->key);
+}
+
 int INSERT_EXAM(BinomialHeap *H, int id, int courseCode,
                 const char *department, const char *date, int priority)
 {
