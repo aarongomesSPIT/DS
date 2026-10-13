@@ -23,6 +23,8 @@ typedef struct
     int n;
 } FibHeap;
 
+void consolidate(FibHeap *H);
+
 FibHeap *makeHeap(void)
 {
     FibHeap *H = malloc(sizeof(*H));
@@ -69,13 +71,26 @@ static void removeFromList(FibNode *x)
     x->right = x;
 }
 
-/* TODO: addToRootList(H, x)
+static int nodeLess(const FibNode *a, const FibNode *b)
+{
+    return a->key < b->key ||
+           (a->key == b->key && a->serverId < b->serverId);
+}
 
-If H->min == NULL, x becomes the only root and H->min.
-
-Otherwise splice x into the root list and update H->min if needed.
-
-*/
+static void addToRootList(FibHeap *H, FibNode *x)
+{
+    x->parent = NULL;
+    x->mark = 0;
+    if (H->min == NULL) {
+        x->left = x;
+        x->right = x;
+        H->min = x;
+    } else {
+        insertAfter(H->min, x);
+        if (nodeLess(x, H->min))
+            H->min = x;
+    }
+}
 
 void fibInsert(FibHeap *H, int serverId, long long load)
 {
@@ -86,7 +101,7 @@ void fibInsert(FibHeap *H, int serverId, long long load)
         return;
     }
 
-    /* TODO: addToRootList(H, x); */
+    addToRootList(H, x);
     H->n++;
 }
 
@@ -100,74 +115,104 @@ FibNode *fibExtractMin(FibHeap *H)
     if (H == NULL || H->min == NULL)
         return NULL;
     FibNode *z = H->min;
-    /* TODO A: promote each child of z into the root list:
-    detach child; set child->parent = NULL;
-    add child to roots; clear child->mark.
-    */
-    /* TODO B: remove z from the root list. */
-    /* TODO C: if roots remain, call consolidate(H). */
-    /* TODO D: otherwise set H->min = NULL. */
+    if (z->child != NULL) {
+        FibNode *child = z->child;
+        FibNode *current = child;
+        do {
+            FibNode *next = current->right;
+            current->parent = NULL;
+            current->mark = 0;
+            removeFromList(current);
+            addToRootList(H, current);
+            current = next;
+        } while (current != child);
+        z->child = NULL;
+        z->degree = 0;
+    }
+
+    if (z->right == z) {
+        H->min = NULL;
+    } else {
+        H->min = z->right;
+        removeFromList(z);
+    }
     H->n--;
-    /* TODO E: detach z safely and return it. */
+    if (H->min != NULL)
+        consolidate(H);
+    z->left = z;
+    z->right = z;
+    z->parent = NULL;
     return z;
 }
 
 void consolidate(FibHeap *H)
 {
-    /* TODO:
-    1.
+    enum { DEGREE_TABLE_SIZE = 64 };
+    FibNode *table[DEGREE_TABLE_SIZE] = {0};
+    FibNode **roots = NULL;
+    int rootCount = 0;
 
-    Initialize a temporary degree table A[] to NULL.
+    if (H->min != NULL) {
+        FibNode *current = H->min;
+        do {
+            FibNode **grown = realloc(roots, (size_t)(rootCount + 1) * sizeof(*roots));
+            if (grown == NULL) {
+                free(roots);
+                return;
+            }
+            roots = grown;
+            roots[rootCount++] = current;
+            current = current->right;
+        } while (current != H->min);
+    }
 
-    2.
+    for (int i = 0; i < rootCount; i++) {
+        FibNode *x = roots[i];
+        int degree = x->degree;
+        while (table[degree] != NULL) {
+            FibNode *y = table[degree];
+            if (nodeLess(y, x)) {
+                FibNode *temp = x;
+                x = y;
+                y = temp;
+            }
+            table[degree] = NULL;
+            removeFromList(y);
+            y->parent = x;
+            y->mark = 0;
+            if (x->child == NULL) {
+                x->child = y;
+            } else {
+                insertAfter(x->child, y);
+            }
+            x->degree++;
+            degree = x->degree;
+        }
+        table[degree] = x;
+    }
 
-    Visit each root x.
-
-    3.
-
-    While A[x->degree] contains a root y:
-
-    -
-
-    keep the smaller-key root as parent
-
-    -
-
-    link the other root under it
-
-    -
-
-    increment parent degree; clear child mark
-
-    -
-
-    continue with the new degree
-
-    4.
-
-    Rebuild the root list from A[].
-
-    5.
-
-    Recompute H->min.
-
-    */
+    H->min = NULL;
+    for (int i = 0; i < DEGREE_TABLE_SIZE; i++) {
+        if (table[i] != NULL) {
+            table[i]->left = table[i];
+            table[i]->right = table[i];
+            addToRootList(H, table[i]);
+        }
+    }
+    free(roots);
 }
 
 void cut(FibHeap *H, FibNode *x, FibNode *y)
 {
-
-    /* TODO:
-
-    remove x from y's child list;
-    update y->child if it points to x;
-    decrement y->degree;
-
-    add x to H's root list;
-
-    set x->parent = NULL and x->mark = 0.
-
-    */
+    if (x->right == x)
+        y->child = NULL;
+    else {
+        if (y->child == x)
+            y->child = x->right;
+        removeFromList(x);
+    }
+    y->degree--;
+    addToRootList(H, x);
 }
 
 void cascadingCut(FibHeap *H, FibNode *y)
@@ -206,7 +251,8 @@ int fibDecreaseKey(FibHeap *H, FibNode *x, long long newKey)
         cascadingCut(H, y);
     }
 
-    /* TODO: update H->min if x is now the smallest. */
+    if (H->min == NULL || nodeLess(x, H->min))
+        H->min = x;
     return 1;
 }
 
@@ -216,12 +262,30 @@ FibHeap *fibUnion(FibHeap *H1, FibHeap *H2)
         return H2;
     if (H2 == NULL)
         return H1;
-    /* TODO: create result heap H.
-    - concatenate root lists in O(1)
-    - set H->min to the smaller non-NULL minimum
-    - set H->n = H1->n + H2->n
-    - return H
-    Decide whether H1 and H2 are consumed by this operation.
-    */
-    return NULL; /* replace after implementing */
+    if (H1->min == NULL) {
+        H2->n += H1->n;
+        free(H1);
+        return H2;
+    }
+    if (H2->min == NULL) {
+        H1->n += H2->n;
+        free(H2);
+        return H1;
+    }
+    FibHeap *result = makeHeap();
+    if (result == NULL)
+        return NULL;
+    result->min = nodeLess(H1->min, H2->min) ? H1->min : H2->min;
+    FibNode *h1 = H1->min;
+    FibNode *h2 = H2->min;
+    FibNode *h1Right = h1->right;
+    FibNode *h2Left = h2->left;
+    h1->right = h2;
+    h2->left = h1;
+    h1Right->left = h2Left;
+    h2Left->right = h1Right;
+    result->n = H1->n + H2->n;
+    free(H1);
+    free(H2);
+    return result;
 }
