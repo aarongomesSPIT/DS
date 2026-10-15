@@ -22,22 +22,24 @@ int main(void)
 			return 1;
 		}
 	}
-
-	for (;;) {
-		int choice;
+	int choice = 0;
+	while (choice !=7) {
 		printf("\n1. Add server\n2. Allocate request\n3. Update load\n"
 			   "4. Merge regions\n5. Least-loaded server\n6. Decommission server\n"
 			   "7. Exit\nChoice: ");
 		if (scanf("%d", &choice) != 1)
 			break;
 
-		if (choice == 1) {
+		switch (choice) {
+		case 1: {
 			int id;
 			long long load;
 			printf("Server ID and load: ");
 			scanf("%d %lld", &id, &load);
 			printf(ADD_SERVER(activeCluster, id, load) ? "Server added.\n" : "Invalid or active server ID.\n");
-		} else if (choice == 2) {
+			break;
+		}
+		case 2: {
 			FibNode *node = ALLOCATE_REQUEST(activeCluster);
 			if (node == NULL)
 				printf("No active servers.\n");
@@ -45,13 +47,17 @@ int main(void)
 				printf("Allocated server %d (load %lld).\n", node->serverId, node->key);
 				free(node);
 			}
-		} else if (choice == 3) {
+			break;
+		}
+		case 3: {
 			int id;
 			long long load;
 			printf("Server ID and new lower load: ");
 			scanf("%d %lld", &id, &load);
 			printf(UPDATE_LOAD(id, load) ? "Load updated.\n" : "Invalid server or load.\n");
-		} else if (choice == 4) {
+			break;
+		}
+		case 4: {
 			FibHeap *other = CREATE_REGION();
 			int id;
 			long long load;
@@ -63,20 +69,26 @@ int main(void)
 			}
 			activeCluster = MERGE_REGIONS(activeCluster, other);
 			printf("Regions merged.\n");
-		} else if (choice == 5) {
+			break;
+		}
+		case 5: {
 			FibNode *node = LEAST_LOADED_SERVER(activeCluster);
 			if (node == NULL)
 				printf("No active servers.\n");
 			else
 				printf("Least-loaded server: %d (load %lld).\n", node->serverId, node->key);
-		} else if (choice == 6) {
+			break;
+		}
+		case 6: {
 			int id;
 			printf("Server ID: ");
 			scanf("%d", &id);
 			printf(DECOMMISSION_SERVER(id) ? "Server decommissioned.\n" : "Invalid server ID.\n");
-		} else if (choice == 7) {
 			break;
-		} else {
+		}
+		case 7:
+			break;
+		default:
 			printf("Invalid choice.\n");
 		}
 	}
