@@ -92,17 +92,18 @@ static void addToRootList(FibHeap *H, FibNode *x)
     }
 }
 
-void fibInsert(FibHeap *H, int serverId, long long load)
+FibNode *fibInsert(FibHeap *H, int serverId, long long load)
 {
     FibNode *x = makeNode(serverId, load);
 
     if (x == NULL)
-    { /* TODO: report allocation failure */
-        return;
+    {
+        return NULL;
     }
 
     addToRootList(H, x);
     H->n++;
+    return x;
 }
 
 FibNode *fibMinimum(FibHeap *H)
@@ -153,17 +154,21 @@ void consolidate(FibHeap *H)
     int rootCount = 0;
 
     if (H->min != NULL) {
-        FibNode *current = H->min;
+        FibNode *curr = H->min;
         do {
-            FibNode **grown = realloc(roots, (size_t)(rootCount + 1) * sizeof(*roots));
-            if (grown == NULL) {
-                free(roots);
-                return;
-            }
-            roots = grown;
-            roots[rootCount++] = current;
-            current = current->right;
-        } while (current != H->min);
+            rootCount++;
+            curr = curr->right;
+        } while (curr != H->min);
+
+        roots = (FibNode **)malloc((size_t)rootCount * sizeof(*roots));
+        if (roots == NULL)
+            return;
+
+        curr = H->min;
+        for (int i = 0; i < rootCount; i++) {
+            roots[i] = curr;
+            curr = curr->right;
+        }
     }
 
     for (int i = 0; i < rootCount; i++) {
@@ -244,7 +249,7 @@ int fibDecreaseKey(FibHeap *H, FibNode *x, long long newKey)
 
     FibNode *y = x->parent;
 
-    if (y != NULL && x->key < y->key)
+    if (y != NULL && nodeLess(x, y))
     {
         cut(H, x, y);
 
