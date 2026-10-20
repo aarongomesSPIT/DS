@@ -3,9 +3,9 @@
 #define MAX_FLIGHTS 100000
 FibNode *nodeById[MAX_FLIGHTS];
 
-static FibHeap *activeSector;
+FibHeap *activeSector;
 
-static int validFlightId(int flightId)
+int validFlightId(int flightId)
 {
     return flightId >= 0 && flightId < MAX_FLIGHTS;
 }
