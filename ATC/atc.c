@@ -1,0 +1,8 @@
+#include "fibonacciHeap.c"
+
+SCHEDULE_FLIGHT(F,priority)
+NEXT_TO_LAND()
+REPRIORITIZE(F,newPriority)
+MERGE_TOWER(Q1,Q2)
+CURRENT_PRIORITY_FLIGHT()
+CANCEL_FLIGHT(F)
