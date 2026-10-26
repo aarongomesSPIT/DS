@@ -1,14 +1,10 @@
 #include "platform.c"
 
-#pragma GCC diagnostic ignored "-Wunused-result"
-
 int main()
 {
-    char line[16];
-    int choice;
+    int choice, n;
     char username[64], fullname[128], email[128], regdate[20];
     char new_fullname[128], new_email[128];
-    int n;
 
     ht_init(&ht);
 
@@ -24,51 +20,41 @@ int main()
         printf("8. BULK-SEED\n");
         printf("0. EXIT\n");
         printf("Choice: ");
-        fgets(line, sizeof(line), stdin);
-        choice = atoi(line);
+        scanf("%d", &choice);
 
         switch (choice)
         {
         case 1:
             printf("Username: ");
-            fgets(username, 64, stdin);
-            username[strcspn(username, "\n")] = 0;
+            scanf(" %63[^\n]", username);
             printf("Full Name: ");
-            fgets(fullname, 128, stdin);
-            fullname[strcspn(fullname, "\n")] = 0;
+            scanf(" %127[^\n]", fullname);
             printf("Email: ");
-            fgets(email, 128, stdin);
-            email[strcspn(email, "\n")] = 0;
+            scanf(" %127[^\n]", email);
             printf("Reg Date: ");
-            fgets(regdate, 20, stdin);
-            regdate[strcspn(regdate, "\n")] = 0;
+            scanf(" %19[^\n]", regdate);
             REGISTER_USER(username, fullname, email, regdate);
             break;
 
         case 2:
             printf("Username: ");
-            fgets(username, 64, stdin);
-            username[strcspn(username, "\n")] = 0;
+            scanf(" %63[^\n]", username);
             CHECK_USERNAME(username);
             break;
 
         case 3:
             printf("Username: ");
-            fgets(username, 64, stdin);
-            username[strcspn(username, "\n")] = 0;
+            scanf(" %63[^\n]", username);
             printf("New Full Name: ");
-            fgets(new_fullname, 128, stdin);
-            new_fullname[strcspn(new_fullname, "\n")] = 0;
+            scanf(" %127[^\n]", new_fullname);
             printf("New Email: ");
-            fgets(new_email, 128, stdin);
-            new_email[strcspn(new_email, "\n")] = 0;
+            scanf(" %127[^\n]", new_email);
             UPDATE_USER(username, new_fullname, new_email);
             break;
 
         case 4:
             printf("Username: ");
-            fgets(username, 64, stdin);
-            username[strcspn(username, "\n")] = 0;
+            scanf(" %63[^\n]", username);
             DELETE_USER(username);
             break;
 
@@ -86,8 +72,7 @@ int main()
 
         case 8:
             printf("Number of users (0 = 5000): ");
-            fgets(line, sizeof(line), stdin);
-            n = atoi(line);
+            scanf("%d", &n);
             if (n <= 0)
                 n = 5000;
             bulk_seed(n);
