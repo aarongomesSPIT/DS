@@ -4,32 +4,37 @@
 
 #define TABLE_SIZE 10007
 
-typedef struct UserRecord {
+typedef struct UserRecord
+{
     char username[64];
     char fullname[128];
     char email[128];
     char regdate[20];
 } UserRecord;
 
-typedef struct Node {
+typedef struct Node
+{
     UserRecord user;
     struct Node *next;
 } Node;
 
-typedef struct {
+typedef struct
+{
     Node *buckets[TABLE_SIZE];
     int count;
     int collisions;
 } HashTable;
 
-int hash(char *key) {
+int hash(char *key)
+{
     unsigned long h = 5381;
     while (*key)
         h = h * 33 + (unsigned char)*key++;
     return (int)(h % TABLE_SIZE);
 }
 
-void ht_init(HashTable *ht) {
+void ht_init(HashTable *ht)
+{
     int i;
     ht->count = 0;
     ht->collisions = 0;
@@ -37,10 +42,12 @@ void ht_init(HashTable *ht) {
         ht->buckets[i] = NULL;
 }
 
-int ht_insert(HashTable *ht, UserRecord *u) {
+int ht_insert(HashTable *ht, UserRecord *u)
+{
     int idx = hash(u->username);
     Node *cur = ht->buckets[idx];
-    while (cur) {
+    while (cur)
+    {
         if (strcmp(cur->user.username, u->username) == 0)
             return 0;
         cur = cur->next;
@@ -55,10 +62,12 @@ int ht_insert(HashTable *ht, UserRecord *u) {
     return 1;
 }
 
-UserRecord *ht_search(HashTable *ht, char *username) {
+UserRecord *ht_search(HashTable *ht, char *username)
+{
     int idx = hash(username);
     Node *cur = ht->buckets[idx];
-    while (cur) {
+    while (cur)
+    {
         if (strcmp(cur->user.username, username) == 0)
             return &cur->user;
         cur = cur->next;
@@ -66,12 +75,15 @@ UserRecord *ht_search(HashTable *ht, char *username) {
     return NULL;
 }
 
-int ht_delete(HashTable *ht, char *username) {
+int ht_delete(HashTable *ht, char *username)
+{
     int idx = hash(username);
     Node *cur = ht->buckets[idx];
     Node *prev = NULL;
-    while (cur) {
-        if (strcmp(cur->user.username, username) == 0) {
+    while (cur)
+    {
+        if (strcmp(cur->user.username, username) == 0)
+        {
             if (prev)
                 prev->next = cur->next;
             else
