@@ -1,0 +1,89 @@
+}}}
+Bharatiya Vidya Bhavan’s
+SARDAR PATEL INSTITUTE OF TECHNOLOGY
+(Autonomous Institute Affiliated to University of Mumbai)
+Munshi Nagar, Andheri (W), Mumbai – 400 058.
+Experiment No. 10
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Aim : To implement a Hash Table using an appropriate collision resolution technique for efficient username
+availability checking and user registration management in a social media platform.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Details/Theory :
+A Hash Table is a linear data structure that stores data as key–value pairs and provides efficient insertion,
+deletion, and search operations. It uses a hash function to compute an index (hash value) from a given key,
+allowing records to be accessed directly instead of searching sequentially.
+The performance of a hash table depends on the quality of the hash function, which should distribute keys
+uniformly across the table to minimize collisions. The average time complexity for insertion, deletion, and
+search operations is O(1), whereas the worst-case complexity is O(n) when excessive collisions occur.
+A collision occurs when two or more keys map to the same hash table index. Common collision resolution
+techniques include Separate Chaining, Linear Probing, Quadratic Probing, and Double Hashing.
+The load factor (α) is defined as:
+𝛼 = Number of Stored Records
+Hash Table Size
+A higher load factor generally increases the probability of collisions and may reduce lookup performance.
+Application Perspective
+Social media platforms and online services require every username to be unique. Whenever a new user
+registers, the system must quickly determine whether the requested username already exists. Searching
+sequentially through millions of user records is computationally expensive and leads to poor user experience.
+Hash Tables enable efficient username lookup with average O(1) search complexity, making them suitable for
+real-time username availability checking. This experiment demonstrates how hashing supports fast
+registration and efficient management of unique usernames while resolving collisions effectively.
+Time Complexity
+Operation Average Case Worst Case
+Insert O(1) O(n)
+Search O(1) O(n)
+Delete O(1) O(n)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem Definition & Assumptions :
+Problem Statement
+A social media platform allows users to create unique usernames during account registration. Before creating
+a new account, the system must quickly verify whether the requested username already exists. As the number
+of registered users grows, performing sequential searches becomes inefficient. Implement a Hash Table using
+any suitable collision resolution technique (Linear Probing, Quadratic Probing, Double Hashing, or Separate
+Chaining) to provide efficient username lookup and management.
+Each user record should contain:
+• Username
+• Full Name
+• Email ID
+• Registration Date
+}}}
+Bharatiya Vidya Bhavan’s
+SARDAR PATEL INSTITUTE OF TECHNOLOGY
+(Autonomous Institute Affiliated to University of Mumbai)
+Munshi Nagar, Andheri (W), Mumbai – 400 058.
+Support the following operations:
+• REGISTER-USER Username FullName EmailID RegistrationDate
+• CHECK-USERNAME Username
+• UPDATE-USER Username
+• DELETE-USER Username
+• DISPLAY-USERS
+• TOTAL-COLLISIONS
+• LOAD-FACTOR
+Populate the hash table with a sufficiently large number of contact records (minimum 5000) and evaluate the
+effectiveness of the selected collision resolution technique by reporting the total collisions and load factor.
+Assumptions
+1. Every username must be unique.
+2. Duplicate usernames are not allowed.
+3. Hash table size is user-defined or selected by the programmer.
+4. Any one collision resolution technique may be implemented.
+5. Random user records may be generated for performance evaluation.
+6. Collision count and load factor must be displayed after execution.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Important Links:
+1. Hash Tables in C (GeeksforGeeks)
+https://www.geeksforgeeks.org/implementation-of-hash-table-in-c-using-separate-chaining/
+2. Hashing Data Structure and Collision Resolution
+https://www.geeksforgeeks.org/hashing-data-structure/
+3. C clock() Function (Execution Time Measurement)
+https://www.geeksforgeeks.org/clock-function-in-c-c/
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Input :
+1. User details (Username, Full Name, Email ID, Registration Date)
+2. User-selected operation (Register/Check/Update/Delete/Display)
+3. Hash table size
+Output :
+1. Username availability or registration status.
+2. Updated user database after performing the selected operation.
+3. Total number of collisions.
+4. Current load factor of the hash table.
+5. Performance analysis after bulk insertion and lookup operations.
