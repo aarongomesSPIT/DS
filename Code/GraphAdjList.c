@@ -1,136 +1,212 @@
+/**
+ * ============================================================================
+ * DATA STRUCTURE: GRAPH (Adjacency List Representation)
+ * ============================================================================
+ * 
+ * DESCRIPTION:
+ * An Adjacency List represents a graph as an array of linked lists.
+ * The size of the array is equal to the number of vertices V.
+ * - adjList[i] is the head of a linked list containing all neighbor vertices 
+ *   directly connected to vertex i.
+ * 
+ * EXAM POINTERS & TRADE-OFFS:
+ * Advantages:
+ * - Highly memory-efficient for SPARSE graphs (where E << V^2):
+ *   Space complexity is O(V + E) instead of O(V^2) for adjacency matrix.
+ * - Iterating over adjacent vertices takes O(degree(v)) time.
+ * - Adding an edge takes O(1) time (inserting at head of linked list).
+ * 
+ * Disadvantages:
+ * - Checking if an edge (u, v) exists takes O(degree(u)) in worst case.
+ * 
+ * TIME COMPLEXITIES:
+ * - Add Edge:              O(1)
+ * - Check Edge:            O(degree(u))
+ * - DFS Traversal:         O(V + E)
+ * - BFS Traversal:         O(V + E)
+ * SPACE COMPLEXITY:        O(V + E)
+ * ============================================================================
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
+// Node in the adjacency list of a vertex
 typedef struct Node {
     int vertex;
     struct Node *next;
 } Node;
 
+// Graph structure containing vertex count and array of adjacency lists
 typedef struct Graph {
-    int vertices;
-    Node **adjList;
+    int numVertices;
+    Node **adjLists;
 } Graph;
 
-Node *createNode(int vertex) {
+/**
+ * Creates and allocates memory for a new adjacency list node.
+ */
+Node *createNode(int vertex)
+{
     Node *newNode = (Node *)malloc(sizeof(Node));
-    if (newNode == NULL) {
-        printf("Memory allocation failed.\n");
+    if (newNode == NULL)
+    {
+        printf("[Error] Memory allocation failed!\n");
         exit(1);
     }
-
     newNode->vertex = vertex;
     newNode->next = NULL;
     return newNode;
 }
 
-Graph *createGraph(int vertices) {
-    if (vertices <= 0) {
-        printf("Number of vertices must be greater than zero.\n");
-        return NULL;
-    }
-
+/**
+ * Creates and initializes a graph with 'vertices' number of vertices.
+ */
+Graph *createGraph(int vertices)
+{
     Graph *graph = (Graph *)malloc(sizeof(Graph));
-    if (graph == NULL) {
-        printf("Memory allocation failed.\n");
+    if (graph == NULL)
+    {
+        printf("[Error] Memory allocation failed!\n");
         exit(1);
     }
 
-    graph->vertices = vertices;
-    graph->adjList = (Node **)malloc(vertices * sizeof(Node *));
-    if (graph->adjList == NULL) {
-        printf("Memory allocation failed.\n");
+    graph->numVertices = vertices;
+    graph->adjLists = (Node **)malloc(vertices * sizeof(Node *));
+    if (graph->adjLists == NULL)
+    {
+        printf("[Error] Memory allocation failed!\n");
         free(graph);
         exit(1);
     }
 
-    for (int i = 0; i < vertices; i++) {
-        graph->adjList[i] = NULL;
+    // Initialize all adjacency list heads to NULL
+    for (int i = 0; i < vertices; i++)
+    {
+        graph->adjLists[i] = NULL;
     }
 
     return graph;
 }
 
-int isValidVertex(Graph *graph, int vertex) {
-    return graph != NULL && vertex >= 0 && vertex < graph->vertices;
+/**
+ * Checks if vertex index is within valid range [0, numVertices - 1].
+ */
+int isValidVertex(Graph *graph, int vertex)
+{
+    return (graph != NULL && vertex >= 0 && vertex < graph->numVertices);
 }
 
-int hasEdge(Graph *graph, int src, int dest) {
-    Node *temp = graph->adjList[src];
-    while (temp != NULL) {
-        if (temp->vertex == dest) {
-            return 1;
-        }
-        temp = temp->next;
-    }
-    return 0;
-}
-
-void addEdge(Graph *graph, int src, int dest) {
-    if (graph == NULL || !isValidVertex(graph, src) || !isValidVertex(graph, dest) || src == dest) {
-        printf("Invalid edge.\n");
+/**
+ * Adds an undirected edge between 'src' and 'dest'.
+ * Inserts at the beginning (head) of each vertex's list in O(1) time.
+ */
+void addEdge(Graph *graph, int src, int dest)
+{
+    if (!isValidVertex(graph, src) || !isValidVertex(graph, dest))
+    {
+        printf("[Error] Invalid vertices (%d, %d)!\n", src, dest);
         return;
     }
 
-    if (hasEdge(graph, src, dest)) {
-        return;
-    }
-
+    // Add edge from src to dest
     Node *newNode = createNode(dest);
-    newNode->next = graph->adjList[src];
-    graph->adjList[src] = newNode;
+    newNode->next = graph->adjLists[src];
+    graph->adjLists[src] = newNode;
 
+    // Since the graph is undirected, add edge from dest to src as well
     newNode = createNode(src);
-    newNode->next = graph->adjList[dest];
-    graph->adjList[dest] = newNode;
+    newNode->next = graph->adjLists[dest];
+    graph->adjLists[dest] = newNode;
 }
 
-void displayGraph(Graph *graph) {
-    if (graph == NULL) {
-        printf("Graph is not created yet.\n");
+/**
+ * Displays the Adjacency List representation of the graph.
+ */
+void displayGraph(Graph *graph)
+{
+    if (graph == NULL)
+    {
+        printf("Graph is empty.\n");
         return;
     }
 
-    printf("\nAdjacency List:\n");
-    for (int i = 0; i < graph->vertices; i++) {
-        Node *temp = graph->adjList[i];
-        printf("%d -> ", i);
-        while (temp != NULL) {
-            printf("%d -> ", temp->vertex);
+    printf("\nAdjacency List (%d vertices):\n", graph->numVertices);
+    for (int i = 0; i < graph->numVertices; i++)
+    {
+        Node *temp = graph->adjLists[i];
+        printf("Vertex %2d: [head]", i);
+        while (temp != NULL)
+        {
+            printf(" -> %d", temp->vertex);
             temp = temp->next;
         }
-        printf("NULL\n");
+        printf(" -> NULL\n");
     }
+    printf("\n");
 }
 
-void DFS(Graph *graph, int vertex, int visited[]) {
-    if (graph == NULL || !isValidVertex(graph, vertex)) {
-        return;
-    }
-
+/**
+ * Recursive helper function for Depth-First Search (DFS).
+ */
+void dfsRec(Graph *graph, int vertex, int visited[])
+{
     visited[vertex] = 1;
     printf("%d ", vertex);
 
-    Node *temp = graph->adjList[vertex];
-    while (temp != NULL) {
-        int connectedVertex = temp->vertex;
-        if (!visited[connectedVertex]) {
-            DFS(graph, connectedVertex, visited);
+    Node *temp = graph->adjLists[vertex];
+    while (temp != NULL)
+    {
+        int neighbor = temp->vertex;
+        if (!visited[neighbor])
+        {
+            dfsRec(graph, neighbor, visited);
         }
         temp = temp->next;
     }
 }
 
-void BFS(Graph *graph, int startVertex) {
-    if (graph == NULL || !isValidVertex(graph, startVertex)) {
-        printf("Invalid starting vertex.\n");
+/**
+ * Depth-First Search (DFS) Traversal starting from startVertex.
+ */
+void DFS(Graph *graph, int startVertex)
+{
+    if (!isValidVertex(graph, startVertex))
+    {
+        printf("[Error] Invalid starting vertex %d!\n", startVertex);
         return;
     }
 
-    int *visited = (int *)calloc(graph->vertices, sizeof(int));
-    int *queue = (int *)malloc(graph->vertices * sizeof(int));
+    int *visited = (int *)calloc(graph->numVertices, sizeof(int));
+    if (visited == NULL)
+    {
+        printf("[Error] Memory allocation failed!\n");
+        return;
+    }
 
-    if (visited == NULL || queue == NULL) {
-        printf("Memory allocation failed.\n");
+    printf("DFS Traversal starting from %d: ", startVertex);
+    dfsRec(graph, startVertex, visited);
+    printf("\n");
+
+    free(visited);
+}
+
+/**
+ * Breadth-First Search (BFS) Traversal starting from startVertex using a Queue.
+ */
+void BFS(Graph *graph, int startVertex)
+{
+    if (!isValidVertex(graph, startVertex))
+    {
+        printf("[Error] Invalid starting vertex %d!\n", startVertex);
+        return;
+    }
+
+    int *visited = (int *)calloc(graph->numVertices, sizeof(int));
+    int *queue = (int *)malloc(graph->numVertices * sizeof(int));
+    if (visited == NULL || queue == NULL)
+    {
+        printf("[Error] Memory allocation failed!\n");
         free(visited);
         free(queue);
         return;
@@ -138,20 +214,27 @@ void BFS(Graph *graph, int startVertex) {
 
     int front = 0;
     int rear = 0;
+
+    // Enqueue start vertex and mark visited
     visited[startVertex] = 1;
     queue[rear++] = startVertex;
 
-    printf("BFS traversal from vertex %d: ", startVertex);
-    while (front < rear) {
-        int vertex = queue[front++];
-        printf("%d ", vertex);
+    printf("BFS Traversal starting from %d: ", startVertex);
 
-        Node *temp = graph->adjList[vertex];
-        while (temp != NULL) {
-            int connectedVertex = temp->vertex;
-            if (!visited[connectedVertex]) {
-                visited[connectedVertex] = 1;
-                queue[rear++] = connectedVertex;
+    while (front < rear)
+    {
+        int curr = queue[front++];
+        printf("%d ", curr);
+
+        // Traverse all adjacent nodes in linked list
+        Node *temp = graph->adjLists[curr];
+        while (temp != NULL)
+        {
+            int neighbor = temp->vertex;
+            if (!visited[neighbor])
+            {
+                visited[neighbor] = 1;
+                queue[rear++] = neighbor;
             }
             temp = temp->next;
         }
@@ -160,4 +243,62 @@ void BFS(Graph *graph, int startVertex) {
 
     free(visited);
     free(queue);
+}
+
+/**
+ * Frees all allocated memory for nodes and graph.
+ */
+void freeGraph(Graph *graph)
+{
+    if (graph == NULL)
+        return;
+
+    for (int i = 0; i < graph->numVertices; i++)
+    {
+        Node *temp = graph->adjLists[i];
+        while (temp != NULL)
+        {
+            Node *toDelete = temp;
+            temp = temp->next;
+            free(toDelete);
+        }
+    }
+    free(graph->adjLists);
+    free(graph);
+}
+
+/* ============================================================================
+ * DEMO MAIN FUNCTION FOR TESTING & REVISION
+ * ============================================================================ */
+int main()
+{
+    printf("=== GRAPH DEMO (ADJACENCY LIST) ===\n");
+
+    /*
+     * Graph structure:
+     *      0 ----- 1
+     *      |     / |
+     *      |   /   |
+     *      | /     |
+     *      2 ----- 3
+     *      |
+     *      4
+     */
+    Graph *graph = createGraph(5);
+
+    addEdge(graph, 0, 1);
+    addEdge(graph, 0, 2);
+    addEdge(graph, 1, 2);
+    addEdge(graph, 1, 3);
+    addEdge(graph, 2, 3);
+    addEdge(graph, 2, 4);
+
+    displayGraph(graph);
+
+    // Traversals
+    DFS(graph, 0);
+    BFS(graph, 0);
+
+    freeGraph(graph);
+    return 0;
 }

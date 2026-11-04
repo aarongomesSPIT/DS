@@ -1,355 +1,303 @@
-#include "doublyLinkedList.h"
-#include "journey.h"
+/**
+ * ============================================================================
+ * DATA STRUCTURE: DOUBLY LINKED LIST
+ * ============================================================================
+ * 
+ * DESCRIPTION:
+ * A Doubly Linked List (DLL) is a linear collection of data nodes where each
+ * node contains three fields:
+ * 1. 'data': The integer value stored in the node.
+ * 2. 'prev': Pointer to the previous node in the sequence (NULL for head).
+ * 3. 'next': Pointer to the next node in the sequence (NULL for tail).
+ * 
+ * ADVANTAGES OVER SINGLY LINKED LIST:
+ * - Can be traversed in both forward and backward directions.
+ * - Deletion of a given node is O(1) if pointer to that node is already known
+ *   (no need to traverse from head to find the predecessor).
+ * - Easy insertion before a given node.
+ * 
+ * TIME COMPLEXITIES:
+ * - Insertion at Beginning: O(1)
+ * - Insertion at End:       O(n) (or O(1) if tail pointer is maintained)
+ * - Insertion at Position:  O(n)
+ * - Deletion at Beginning:  O(1)
+ * - Deletion at End:        O(n)
+ * - Deletion at Position:   O(n)
+ * - Search / Traversal:     O(n)
+ * ============================================================================
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-struct Node *head = NULL;
-struct Node *newNode, *temp;
-void createList(int n) {
+// Definition of a Doubly Linked List Node
+typedef struct Node {
+    int data;
+    struct Node *prev;
+    struct Node *next;
+} Node;
 
-
-    int DestinationID;
-    char DestinationName[50];
-    char City[50];
-    int Quantity;
-    char PlannedDate[50]; // Warning the date should be in the format "YYYY-MM-DD"
-    int NoOfDays;
-    int EstimatedBudget;
-    char ModeOfTransport[50];
-    for (int i = 1; i <= n; i++)
-    {
-        // Allocate memory for new node
-        newNode = (struct Node *)malloc(sizeof(struct Node));
-        printf("Enter data for node %d: ", i);
-
-        printf("Destination ID: ");
-        scanf("%d", &DestinationID);
-        printf("Destination Name: ");
-        scanf(" %[^\n]%*c", DestinationName);
-        printf("City: ");
-        scanf(" %[^\n]%*c", City);
-        printf("Quantity: ");
-        scanf("%d", &Quantity);
-        printf("Planned Date (YYYY-MM-DD): ");
-        scanf(" %[^\n]%*c", PlannedDate);
-        printf("Number of Days: ");
-        scanf("%d", &NoOfDays);
-        printf("Estimated Budget: ");
-        scanf("%d", &EstimatedBudget);
-        printf("Mode of Transport: ");
-        scanf(" %[^\n]%*c", ModeOfTransport);
-
-        newNode->DestinationID = DestinationID;
-
-        strncpy(newNode->DestinationName, DestinationName, sizeof(newNode->DestinationName) - 1);
-        newNode->DestinationName[sizeof(newNode->DestinationName) - 1] = '\0';
-
-        strncpy(newNode->City, City, sizeof(newNode->City) - 1);
-        newNode->City[sizeof(newNode->City) - 1] = '\0';
-
-        newNode->Quantity = Quantity;
-
-        strncpy(newNode->PlannedDate, PlannedDate, sizeof(newNode->PlannedDate) - 1);
-        newNode->PlannedDate[sizeof(newNode->PlannedDate) - 1] = '\0';
-
-        newNode->NoOfDays = NoOfDays;
-
-        newNode->EstimatedBudget = EstimatedBudget;
-
-        strncpy(newNode->ModeOfTransport, ModeOfTransport, sizeof(newNode->ModeOfTransport) - 1);
-        newNode->ModeOfTransport[sizeof(newNode->ModeOfTransport) - 1] = '\0';
-
-
-        newNode->prev = NULL;
-        newNode->next = NULL;
-        // If list is empty
-        if (head == NULL)
-        {
-            head = newNode;
-            temp = newNode;
-        }
-        else
-        {
-            // Connect new node with last node
-            temp->next = newNode;
-            newNode->prev = temp;
-            // Move temp to new last node
-            temp = newNode;
-        }
-    }
-}
-
-void displayList() {
-    struct Node *temp = head;
-    printf("\nDoubly Linked List: ");
-    while (temp != NULL)
-    {
-        printf("%d", temp->DestinationID);
-        if (temp->next != NULL)
-        printf(" <-> ");
-        temp = temp->next;
-    }
-    printf("\n");
-}
-
-void traverseReverse(struct Node *head) {
-    // Check if list is empty
-    if (head == NULL)
-    {
-        printf("List is empty!\n");
-        return;
-    }
-    struct Node *temp = head;
-    // Move to the last node
-    while (temp->next != NULL)
-    {
-        temp = temp->next;
-    }
-    // Traverse backwards using prev
-    while (temp != NULL)
-    {
-        printf("%d ", temp->DestinationID);
-        temp = temp->prev;
-    }
-}
-
-void insertAtBeginning(struct Node **head, int DestinationID,
-    char DestinationName[], char City[], int Quantity, char PlannedDate[], int NoOfDays, int EstimatedBudget,
-    char ModeOfTransport[])
+/**
+ * Creates and allocates memory for a new node storing an integer data.
+ */
+Node *createNode(int data)
 {
-    // Create a new node
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-
-    newNode->DestinationID = DestinationID;
-
-    strncpy(newNode->DestinationName, DestinationName, sizeof(newNode->DestinationName) - 1);
-    newNode->DestinationName[sizeof(newNode->DestinationName) - 1] = '\0';
-
-    strncpy(newNode->City, City, sizeof(newNode->City) - 1);
-    newNode->City[sizeof(newNode->City) - 1] = '\0';
-
-    newNode->Quantity = Quantity;
-
-    strncpy(newNode->PlannedDate, PlannedDate, sizeof(newNode->PlannedDate) - 1);
-    newNode->PlannedDate[sizeof(newNode->PlannedDate) - 1] = '\0';
-
-    newNode->NoOfDays = NoOfDays;
-
-    newNode->EstimatedBudget = EstimatedBudget;
-
-    strncpy(newNode->ModeOfTransport, ModeOfTransport, sizeof(newNode->ModeOfTransport) - 1);
-    newNode->ModeOfTransport[sizeof(newNode->ModeOfTransport) - 1] = '\0';
-
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    if (newNode == NULL)
+    {
+        printf("[Error] Memory allocation failed!\n");
+        exit(1);
+    }
+    newNode->data = data;
     newNode->prev = NULL;
+    newNode->next = NULL;
+    return newNode;
+}
+
+/**
+ * Inserts a new node with 'data' at the beginning (head) of the list.
+ * 
+ * Pointer Logic:
+ * 1. newNode->next = *head;
+ * 2. If list is not empty: (*head)->prev = newNode;
+ * 3. *head = newNode;
+ */
+void insertAtBeginning(Node **head, int data)
+{
+    Node *newNode = createNode(data);
+
     newNode->next = *head;
-    // If list is not empty
+    newNode->prev = NULL;
+
     if (*head != NULL)
     {
         (*head)->prev = newNode;
     }
-    // Make new node the head
     *head = newNode;
+    printf("Inserted %d at beginning.\n", data);
 }
 
-void insertAtEnd(struct Node **head, int DestinationID,
-    char DestinationName[], char City[], int Quantity, char PlannedDate[], int NoOfDays, int EstimatedBudget,
-    char ModeOfTransport[])
+/**
+ * Inserts a new node with 'data' at the end of the list.
+ * 
+ * Pointer Logic:
+ * 1. If list is empty: *head = newNode;
+ * 2. Otherwise traverse to last node (temp->next == NULL).
+ * 3. temp->next = newNode;
+ * 4. newNode->prev = temp;
+ */
+void insertAtEnd(Node **head, int data)
 {
-    // Create a new node
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    Node *newNode = createNode(data);
 
-    newNode->DestinationID = DestinationID;
-
-    strncpy(newNode->DestinationName, DestinationName, sizeof(newNode->DestinationName) - 1);
-    newNode->DestinationName[sizeof(newNode->DestinationName) - 1] = '\0';
-
-    strncpy(newNode->City, City, sizeof(newNode->City) - 1);
-    newNode->City[sizeof(newNode->City) - 1] = '\0';
-
-    newNode->Quantity = Quantity;
-
-    strncpy(newNode->PlannedDate, PlannedDate, sizeof(newNode->PlannedDate) - 1);
-    newNode->PlannedDate[sizeof(newNode->PlannedDate) - 1] = '\0';
-
-    newNode->NoOfDays = NoOfDays;
-
-    newNode->EstimatedBudget = EstimatedBudget;
-
-    strncpy(newNode->ModeOfTransport, ModeOfTransport, sizeof(newNode->ModeOfTransport) - 1);
-    newNode->ModeOfTransport[sizeof(newNode->ModeOfTransport) - 1] = '\0';
-
-
-    newNode->next = NULL;
-    // If list is empty
+    // If list is empty, new node becomes the head
     if (*head == NULL)
     {
-        newNode->prev = NULL;
         *head = newNode;
+        printf("Inserted %d at end (as head).\n", data);
         return;
     }
+
     // Traverse to the last node
-    struct Node *temp = *head;
+    Node *temp = *head;
     while (temp->next != NULL)
     {
         temp = temp->next;
     }
-    // Connect new node with last node
+
     temp->next = newNode;
     newNode->prev = temp;
+    printf("Inserted %d at end.\n", data);
 }
 
-
-void insertAtPosition(struct Node **head, int DestinationID,
-    char DestinationName[], char City[], int Quantity, char PlannedDate[], int NoOfDays, int EstimatedBudget,
-    char ModeOfTransport[], int position)
+/**
+ * Inserts a new node with 'data' at a specific 1-based position.
+ * Position 1 = beginning of list.
+ */
+void insertAtPosition(Node **head, int data, int position)
 {
-    // Insert at beginning if position is 1
-    if (position == 1)
+    if (position < 1)
     {
-        insertAtBeginning(head, DestinationID,
-            DestinationName, City, Quantity, PlannedDate, NoOfDays, EstimatedBudget,
-            ModeOfTransport);
+        printf("[Error] Invalid position %d! Position must be >= 1.\n", position);
         return;
     }
-    // Traverse to position - 1
-    struct Node *temp = *head;
+
+    // If inserting at the very beginning
+    if (position == 1)
+    {
+        insertAtBeginning(head, data);
+        return;
+    }
+
+    // Traverse to (position - 1) node
+    Node *temp = *head;
     for (int i = 1; i < position - 1 && temp != NULL; i++)
     {
         temp = temp->next;
     }
-    // Check for invalid position
+
+    // If position is beyond (length + 1)
     if (temp == NULL)
     {
-        printf("Invalid position!\n");
+        printf("[Error] Position %d out of bounds!\n", position);
         return;
     }
-    // Create a new node
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
 
-    newNode->DestinationID = DestinationID;
+    Node *newNode = createNode(data);
 
-    strncpy(newNode->DestinationName, DestinationName, sizeof(newNode->DestinationName) - 1);
-    newNode->DestinationName[sizeof(newNode->DestinationName) - 1] = '\0';
-
-    strncpy(newNode->City, City, sizeof(newNode->City) - 1);
-    newNode->City[sizeof(newNode->City) - 1] = '\0';
-
-    newNode->Quantity = Quantity;
-
-    strncpy(newNode->PlannedDate, PlannedDate, sizeof(newNode->PlannedDate) - 1);
-    newNode->PlannedDate[sizeof(newNode->PlannedDate) - 1] = '\0';
-
-    newNode->NoOfDays = NoOfDays;
-
-    newNode->EstimatedBudget = EstimatedBudget;
-
-    strncpy(newNode->ModeOfTransport, ModeOfTransport, sizeof(newNode->ModeOfTransport) - 1);
-    newNode->ModeOfTransport[sizeof(newNode->ModeOfTransport) - 1] = '\0';
-
-    // Set links of new node
+    // Wire up new node's next and prev
     newNode->next = temp->next;
     newNode->prev = temp;
-    // Update previous pointer of next node
+
+    // If not inserting at the very end, update successor's prev pointer
     if (temp->next != NULL)
     {
         temp->next->prev = newNode;
     }
-    // Update next pointer of previous node
     temp->next = newNode;
+    printf("Inserted %d at position %d.\n", data, position);
 }
 
-
-void deleteAtBeginning(struct Node **head)
+/**
+ * Deletes the first node (head) of the list.
+ * 
+ * Pointer Logic:
+ * 1. Save temp = *head;
+ * 2. *head = (*head)->next;
+ * 3. If new head != NULL, (*head)->prev = NULL;
+ * 4. free(temp);
+ */
+void deleteAtBeginning(Node **head)
 {
-    // Check if list is empty
     if (*head == NULL)
     {
-        printf("List is empty!\n");
+        printf("[Error] List is empty! Nothing to delete.\n");
         return;
     }
-    // Store the first node
-    struct Node *temp = *head;
-    // Move head to the next node
+
+    Node *temp = *head;
     *head = (*head)->next;
-    // If list is not empty after deletion
+
     if (*head != NULL)
     {
         (*head)->prev = NULL;
     }
-    // Delete the old first node
+
+    printf("Deleted %d from beginning.\n", temp->data);
     free(temp);
 }
 
-void deleteAtEnd(struct Node **head)
+/**
+ * Deletes the last node of the list.
+ * 
+ * Pointer Logic:
+ * 1. If only 1 node: free and set *head = NULL.
+ * 2. Otherwise traverse to last node (temp->next == NULL).
+ * 3. temp->prev->next = NULL;
+ * 4. free(temp);
+ */
+void deleteAtEnd(Node **head)
 {
-    // Check if list is empty
     if (*head == NULL)
     {
-        printf("List is empty!\n");
+        printf("[Error] List is empty! Nothing to delete.\n");
         return;
     }
-    // Store head in temp
-    struct Node *temp = *head;
-    // If there is only one node
+
+    Node *temp = *head;
+
+    // Case: Single node in list
     if (temp->next == NULL)
     {
         *head = NULL;
+        printf("Deleted %d from end (list is now empty).\n", temp->data);
         free(temp);
         return;
     }
+
     // Traverse to the last node
     while (temp->next != NULL)
     {
         temp = temp->next;
     }
-    // Make previous node the last node
+
+    // Disconnect last node from second-to-last node
     temp->prev->next = NULL;
-    // Delete the last node
+    printf("Deleted %d from end.\n", temp->data);
     free(temp);
 }
 
-void deleteAtPosition(struct Node **head, int position)
+/**
+ * Deletes the node at a given 1-based position.
+ */
+void deleteAtPosition(Node **head, int position)
 {
-    // Check if list is empty
     if (*head == NULL)
     {
-        printf("List is empty!\n");
+        printf("[Error] List is empty! Nothing to delete.\n");
         return;
     }
-    // Delete first node if position is 1
+
+    if (position < 1)
+    {
+        printf("[Error] Invalid position %d!\n", position);
+        return;
+    }
+
     if (position == 1)
     {
         deleteAtBeginning(head);
         return;
     }
-    struct Node *temp = *head;
-    // Traverse to the node to be deleted
+
+    Node *temp = *head;
     for (int i = 1; i < position && temp != NULL; i++)
     {
         temp = temp->next;
     }
-    // Check for invalid position
+
     if (temp == NULL)
     {
-        printf("Invalid position!\n");
+        printf("[Error] Position %d out of bounds!\n", position);
         return;
     }
-    // Connect previous node to next node
+
+    // Bypass temp in both directions
     temp->prev->next = temp->next;
-    // Connect next node to previous node
     if (temp->next != NULL)
     {
         temp->next->prev = temp->prev;
     }
-    // Delete the node
+
+    printf("Deleted %d from position %d.\n", temp->data, position);
     free(temp);
 }
 
-int countNodes(struct Node *head)
+/**
+ * Searches for a node with the given target integer.
+ * Returns pointer to node if found, or NULL if not found.
+ */
+Node *searchNode(Node *head, int target)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        if (temp->data == target)
+        {
+            return temp;
+        }
+        temp = temp->next;
+    }
+    return NULL;
+}
+
+/**
+ * Counts and returns the total number of nodes in the list.
+ */
+int countNodes(Node *head)
 {
     int count = 0;
-    struct Node *temp = head;
+    Node *temp = head;
     while (temp != NULL)
     {
         count++;
@@ -358,50 +306,92 @@ int countNodes(struct Node *head)
     return count;
 }
 
-struct Node *searchNode(struct Node *head, int DestinationID, char DestinationName[])
+/**
+ * Displays the list elements in forward order (head to tail).
+ */
+void displayForward(Node *head)
 {
-    struct Node *temp = head;
+    if (head == NULL)
+    {
+        printf("List is empty.\n");
+        return;
+    }
+    printf("Forward:  NULL <- ");
+    Node *temp = head;
     while (temp != NULL)
     {
-        if (temp->DestinationID == DestinationID || strcmp(temp->DestinationName, DestinationName) == 0)
-        {
-            return temp; // Node found
-        }
+        printf("[%d]", temp->data);
+        if (temp->next != NULL)
+            printf(" <-> ");
         temp = temp->next;
     }
-    return NULL; // Node not found
+    printf(" -> NULL\n");
 }
 
-int getPosition(struct Node *head, int DestinationID, char DestinationName[])
+/**
+ * Displays the list elements in reverse order (tail to head).
+ */
+void displayBackward(Node *head)
 {
-    struct Node *temp = head;
-    int position = 1;
+    if (head == NULL)
+    {
+        printf("List is empty.\n");
+        return;
+    }
+
+    // Traverse to the last node
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    // Traverse backwards using prev pointers
+    printf("Backward: NULL <- ");
     while (temp != NULL)
     {
-        if (temp->DestinationID == DestinationID || strcmp(temp->DestinationName, DestinationName) == 0)
-        {
-            return position; // Node found
-        }
-        temp = temp->next;
-        position++;
+        printf("[%d]", temp->data);
+        if (temp->prev != NULL)
+            printf(" <-> ");
+        temp = temp->prev;
     }
-    return -1; // Node not found
+    printf(" -> NULL\n");
 }
 
-struct Node *getNodeAtPosition(struct Node *head, int position)
+/* ============================================================================
+ * DEMO MAIN FUNCTION FOR TESTING & REVISION
+ * ============================================================================ */
+int main()
 {
-    struct Node *temp = head;
-    int currentPosition = 1;
-    while (temp != NULL)
-    {
-        if (currentPosition == position)
-        {
-            return temp; // Node found
-        }
-        temp = temp->next;
-        currentPosition++;
-    }
+    Node *head = NULL;
 
+    printf("=== DOUBLY LINKED LIST DEMO ===\n\n");
 
-    return NULL; // Node not found
+    insertAtEnd(&head, 10);
+    insertAtEnd(&head, 20);
+    insertAtBeginning(&head, 5);
+    insertAtEnd(&head, 30);
+    insertAtPosition(&head, 15, 3); // Insert 15 at index 3
+
+    displayForward(head);
+    displayBackward(head);
+
+    printf("Total nodes: %d\n\n", countNodes(head));
+
+    // Search
+    int target = 15;
+    Node *found = searchNode(head, target);
+    printf("Searching for %d: %s\n\n", target, (found != NULL) ? "Found" : "Not Found");
+
+    // Deletions
+    deleteAtBeginning(&head);
+    displayForward(head);
+
+    deleteAtEnd(&head);
+    displayForward(head);
+
+    deleteAtPosition(&head, 2);
+    displayForward(head);
+
+    return 0;
 }

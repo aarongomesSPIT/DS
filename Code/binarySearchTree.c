@@ -1,197 +1,319 @@
-#include <stdio.h> // Provides printf()
-#include <stdlib.h> // Provides malloc() and free()
-#include "binarySearchTree.h"
-#include "library.h"
-// Define a structure for a Binary Search Tree node
+/**
+ * ============================================================================
+ * DATA STRUCTURE: BINARY SEARCH TREE (BST)
+ * ============================================================================
+ * 
+ * DESCRIPTION:
+ * A Binary Search Tree is a hierarchical node-based binary tree data structure
+ * with the following invariant (BST Property):
+ * 1. The left subtree of a node contains only keys LESS than the node's key.
+ * 2. The right subtree of a node contains only keys GREATER than the node's key.
+ * 3. Both the left and right subtrees must also be binary search trees.
+ * 4. Duplicate keys are typically not allowed.
+ * 
+ * KEY EXAM POINTERS:
+ * - IN-ORDER TRAVERSAL (Left -> Root -> Right) ALWAYS yields keys in 
+ *   ASCENDING SORTED ORDER.
+ * - PRE-ORDER:  Root -> Left -> Right (used for copying or serializing trees).
+ * - POST-ORDER: Left -> Right -> Root (used for deleting trees from bottom up).
+ * - MINIMUM: Follow left pointers until node->left == NULL.
+ * - MAXIMUM: Follow right pointers until node->right == NULL.
+ * 
+ * DELETION CASES:
+ * - Case 1: Leaf node (0 children) -> simply free the node and return NULL.
+ * - Case 2: Single child (left OR right) -> replace node with its child.
+ * - Case 3: Two children -> find the In-order Successor (smallest node in the
+ *           right subtree), copy its key into the current node, then delete 
+ *           the successor from the right subtree.
+ * 
+ * TIME COMPLEXITIES:
+ * - Search:    Average O(log n), Worst O(n) [when tree is skewed]
+ * - Insertion: Average O(log n), Worst O(n)
+ * - Deletion:  Average O(log n), Worst O(n)
+ * SPACE COMPLEXITY: O(h) where h is tree height (recursion call stack)
+ * ============================================================================
+ */
 
+#include <stdio.h>
+#include <stdlib.h>
 
-// Function to create a new node with a given value
-struct Node *newNodeCreate(Book value)
+// Definition of a BST Node
+typedef struct Node {
+    int key;
+    struct Node *left;
+    struct Node *right;
+} Node;
+
+/**
+ * Creates and allocates memory for a new BST node.
+ */
+Node *createNode(int key)
 {
-    // Allocate memory dynamically for a new node
-    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
-    // Store the given value in the node
-    temp->key = value;
-    // Initially, the new node has no children
-    temp->left = NULL;
-    temp->right = NULL;
-    // Return the address of the newly created node
-    return temp;
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    if (newNode == NULL)
+    {
+        printf("[Error] Memory allocation failed!\n");
+        exit(1);
+    }
+    newNode->key = key;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
 }
 
-// Function to search for a node with a specific key
-struct Node *searchNode(struct Node *root, int target)
+/**
+ * Inserts a new key into the BST recursively.
+ * Returns the updated root pointer.
+ */
+Node *insertNode(Node *root, int key)
 {
-    // If tree is empty OR target is found at current node,
-    // return the current node
-    if (root == NULL || root->key.id == target)
+    // Base Case: If current spot is empty, create the node here
+    if (root == NULL)
+    {
+        return createNode(key);
+    }
+
+    // Recur down the left subtree if key is smaller
+    if (key < root->key)
+    {
+        root->left = insertNode(root->left, key);
+    }
+    // Recur down the right subtree if key is larger
+    else if (key > root->key)
+    {
+        root->right = insertNode(root->right, key);
+    }
+    // Duplicate keys are ignored in standard BST
+    else
+    {
+        printf("[Notice] Key %d already exists. Duplicates not inserted.\n", key);
+    }
+
+    return root;
+}
+
+/**
+ * Searches for a target key in the BST recursively.
+ * Returns pointer to the matching node, or NULL if not found.
+ */
+Node *searchNode(Node *root, int target)
+{
+    // Base Cases: root is NULL (not found) or target is found at current root
+    if (root == NULL || root->key == target)
+    {
         return root;
-    // If target is greater than current node's key,
-    // search in the right subtree
-    if (root->key.id < target)
+    }
+
+    // Target is larger -> search right subtree
+    if (target > root->key)
+    {
         return searchNode(root->right, target);
-    // If target is smaller than current node's key,
-    // search in the left subtree
+    }
+
+    // Target is smaller -> search left subtree
     return searchNode(root->left, target);
 }
 
-// Function to insert a node with a specific value
-struct Node *insertNode(struct Node *node, Book value)
+/**
+ * Finds the node with the minimum value in a given BST/subtree.
+ * The minimum value is always located at the leftmost node.
+ */
+Node *findMin(Node *root)
 {
-    // If current position is NULL,
-    // create a new node here
-    if (node == NULL)
-        return newNodeCreate(value);
-    // If value is smaller than current node,
-    // insert into the left subtree
-    if (value.id < node->key.id)
-        node->left = insertNode(node->left, value);
-    // If value is greater than current node,
-    // insert into the right subtree
-    else if (value.id > node->key.id)
-        node->right = insertNode(node->right, value);
-    // Return the root of the tree/subtree
-    return node;
-}
+    if (root == NULL)
+        return NULL;
 
-
-// Function to perform Postorder Traversal
-// Postorder = Left -> Right -> Root
-void postOrder(struct Node *root)
-{
-    // Check whether the current node exists
-    if (root != NULL)
+    while (root->left != NULL)
     {
-        // Visit the left subtree
-        postOrder(root->left);
-        // Visit the right subtree
-        postOrder(root->right);
-        // Visit the root node
-        PrintBook(root->key);
+        root = root->left;
     }
+    return root;
 }
 
-// Function to perform Inorder Traversal
-// Inorder = Left -> Root -> Right
-void inOrder(struct Node *root)
+/**
+ * Finds the node with the maximum value in a given BST/subtree.
+ * The maximum value is always located at the rightmost node.
+ */
+Node *findMax(Node *root)
 {
-    // Check whether the current node exists
+    if (root == NULL)
+        return NULL;
+
+    while (root->right != NULL)
+    {
+        root = root->right;
+    }
+    return root;
+}
+
+/**
+ * Deletes a node with the given key from the BST.
+ * Returns the root of the modified subtree.
+ */
+Node *deleteNode(Node *root, int key)
+{
+    if (root == NULL)
+    {
+        return NULL; // Key not found in tree
+    }
+
+    // Step 1: Locate the node to delete
+    if (key < root->key)
+    {
+        root->left = deleteNode(root->left, key);
+    }
+    else if (key > root->key)
+    {
+        root->right = deleteNode(root->right, key);
+    }
+    else
+    {
+        // Step 2: Node found! Handle the 3 deletion cases:
+
+        // CASE 1: Node has NO children (Leaf Node)
+        if (root->left == NULL && root->right == NULL)
+        {
+            free(root);
+            return NULL;
+        }
+
+        // CASE 2: Node has only ONE child
+        else if (root->left == NULL)
+        {
+            Node *temp = root->right;
+            free(root);
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            Node *temp = root->left;
+            free(root);
+            return temp;
+        }
+
+        // CASE 3: Node has TWO children
+        else
+        {
+            // Find in-order successor (smallest in right subtree)
+            Node *temp = findMin(root->right);
+
+            // Copy successor's key to current node
+            root->key = temp->key;
+
+            // Delete the duplicate successor from the right subtree
+            root->right = deleteNode(root->right, temp->key);
+        }
+    }
+    return root;
+}
+
+/**
+ * In-Order Traversal: Left -> Root -> Right
+ * Outputs elements in ascending sorted order.
+ */
+void inOrder(Node *root)
+{
     if (root != NULL)
     {
-        // Visit the left subtree
         inOrder(root->left);
-        // Visit the root node
-        PrintBook(root->key);
-        // Visit the right subtree
+        printf("%d ", root->key);
         inOrder(root->right);
     }
 }
 
-
-// Function to perform Preorder Traversal
-// Preorder = Root -> Left -> Right
-void preOrder(struct Node *root)
+/**
+ * Pre-Order Traversal: Root -> Left -> Right
+ */
+void preOrder(Node *root)
 {
-    // Check whether the current node exists
     if (root != NULL)
     {
-        // Visit the root node first
-        PrintBook(root->key);
-        // Visit the left subtree
+        printf("%d ", root->key);
         preOrder(root->left);
-        // Visit the right subtree
         preOrder(root->right);
     }
 }
 
-// Function to find the minimum value node
-struct Node *findMin(struct Node *root)
+/**
+ * Post-Order Traversal: Left -> Right -> Root
+ */
+void postOrder(Node *root)
 {
-    // If tree is empty, return NULL
-    if (root == NULL)
-        return NULL;
-    // If left child exists,
-    // continue searching in the left subtree
-    else if (root->left != NULL)
-        return findMin(root->left);
-    // If there is no left child,
-    // current node contains the minimum value
-    return root;
-}
-
-// Function to find the maximum value node
-struct Node *findMax(struct Node *root){
-    // If tree is empty, return NULL
-    if (root == NULL)
-        return NULL;
-    // If right child exists,
-    // continue searching in the right subtree
-    else if (root->right != NULL)
-        return findMax(root->right);
-    // If there is no right child,
-    // current node contains the maximum value
-    return root;
-}
-
-// Function to delete a node from the BST
-struct Node *deleteNode(struct Node *root, int x)
-{
-    // If tree is empty or node is not found
-    if (root == NULL)
-        return NULL;
-    // If value to be deleted is greater than
-    // current node's key,
-    // search in the right subtree
-    if (x > root->key.id)
-        root->right = deleteNode(root->right, x);
-    // If value to be deleted is smaller than
-    // current node's key,
-    // search in the left subtree
-    else if (x < root->key.id)
-        root->left = deleteNode(root->left, x);
-    // If x == root->key,
-    // the node to be deleted has been found
-    else
+    if (root != NULL)
     {
-        // CASE 1: Node has no children
-        // It is a leaf node
-        if (root->left == NULL && root->right == NULL)
-        {
-            // Free the memory occupied by the node
-            free(root);
-            // Return NULL because the node is deleted
-            return NULL;
-        }
-        // CASE 2: Node has only one child
-        else if (root->left == NULL || root->right == NULL)
-        {
-            // Temporary pointer to store the child
-            struct Node *temp;
-            // If left child does not exist,
-            // use the right child
-            if (root->left == NULL) temp = root->right;
-
-            // Otherwise, use the left child
-            else temp = root->left;
-            // Delete the current node
-            free(root);
-            // Return the child to take its place
-            return temp;
-        }
-        // CASE 3: Node has two children
-        else
-        {
-            // Find the smallest node in the right subtree
-            // This is called the Inorder Successor
-            struct Node *temp = findMin(root->right);
-            // Copy the Inorder Successor's value
-            // into the current node
-            root->key = temp->key;
-            // Delete the duplicate Inorder Successor
-            // from the right subtree
-            root->right = deleteNode(root->right, temp->key.id);
-        }
+        postOrder(root->left);
+        postOrder(root->right);
+        printf("%d ", root->key);
     }
-    // Return the root after deletion
-    return root;
+}
+
+/* ============================================================================
+ * DEMO MAIN FUNCTION FOR TESTING & REVISION
+ * ============================================================================ */
+int main()
+{
+    Node *root = NULL;
+
+    printf("=== BINARY SEARCH TREE (BST) DEMO ===\n\n");
+
+    /*
+     * Inserting keys: 50, 30, 70, 20, 40, 60, 80
+     * Resulting Tree:
+     *          50
+     *        /    \
+     *       30     70
+     *      /  \   /  \
+     *     20  40 60  80
+     */
+    root = insertNode(root, 50);
+    insertNode(root, 30);
+    insertNode(root, 70);
+    insertNode(root, 20);
+    insertNode(root, 40);
+    insertNode(root, 60);
+    insertNode(root, 80);
+
+    printf("In-order Traversal (Sorted): ");
+    inOrder(root);
+    printf("\n");
+
+    printf("Pre-order Traversal:         ");
+    preOrder(root);
+    printf("\n");
+
+    printf("Post-order Traversal:        ");
+    postOrder(root);
+    printf("\n\n");
+
+    // Min and Max
+    Node *minNode = findMin(root);
+    Node *maxNode = findMax(root);
+    if (minNode) printf("Minimum key: %d\n", minNode->key);
+    if (maxNode) printf("Maximum key: %d\n", maxNode->key);
+
+    // Search
+    int target = 40;
+    Node *searchResult = searchNode(root, target);
+    printf("\nSearching for %d: %s\n", target, (searchResult != NULL) ? "Found" : "Not Found");
+
+    // Deletions
+    printf("\nDeleting leaf node 20 (Case 1)...\n");
+    root = deleteNode(root, 20);
+    printf("In-order: ");
+    inOrder(root);
+    printf("\n");
+
+    printf("Deleting node 30 with one child (Case 2)...\n");
+    root = deleteNode(root, 30);
+    printf("In-order: ");
+    inOrder(root);
+    printf("\n");
+
+    printf("Deleting root node 50 with two children (Case 3)...\n");
+    root = deleteNode(root, 50);
+    printf("In-order: ");
+    inOrder(root);
+    printf("\n");
+
+    return 0;
 }
